@@ -39,10 +39,10 @@ function App() {
   ];
 
   const skills = [
-    'Programming Languages: Java, Python, C++',
+    'Programming Languages: Java, Python, C#',
     'Web Technologies: HTML, CSS, JavaScript',
     'Databases: MySQL, MongoDB',
-    'Tools: Git, VS Code, Eclipse',
+    'Tools: Git, VS Code',
   ];
 
   const contactInfo = {
@@ -52,45 +52,33 @@ function App() {
   };
 
   return (
-    
     <div>
-        <h1>Vladimir Estevez</h1>
-        <h2>Computer Science Student</h2>
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      
-      
-        <h2>About Me</h2>
-        <p>Third-year Computer Science student at [Your University]. Passionate about [Your Interests].</p>
-      
-      
-        <h2>Projects</h2>
-        {projects.map((project, index) => (
-          <Project key={index} {...project} />
-        ))}
-      
-      
-        <h2>Technical Skills</h2>
-        <SkillList skills={skills} />
-      
-      
-        <h2>Contact Me</h2>
+      <h1>Vladimir Estevez</h1>
+      <h2>Computer Science Student</h2>
+      <nav>
         <ul>
-          <li>Email: {contactInfo.email}</li>
-          <li>GitHub: <a href="#">{contactInfo.github}</a></li>
-          <li>LinkedIn: <a href="#">{contactInfo.linkedin}</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      
-      
-        &copy; 2025 Your Name. All rights reserved.
-      
-        </div>
+      </nav>
+      <h2>About Me</h2>
+      <p>Third-year Computer Science student at [Your University]. Passionate about [Your Interests].</p>
+      <h2>Projects</h2>
+      {projects.map((project, index) => (
+        <Project key={index} {...project} />
+      ))}
+      <h2>Technical Skills</h2>
+      <SkillList skills={skills} />
+      <h2>Contact Me</h2>
+      <ul>
+        <li>Email: {contactInfo.email}</li>
+        <li>GitHub: <a href="#">{contactInfo.github}</a></li>
+        <li>LinkedIn: <a href="#">{contactInfo.linkedin}</a></li>
+      </ul>
+      &copy; 2025 Your Name. All rights reserved.
+    </div>
   );
 }
 
