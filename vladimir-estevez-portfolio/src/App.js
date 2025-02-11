@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+
 import { Container, Row, Col } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import NavigationBar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -57,13 +57,16 @@ function App() {
     resume: '/resume.pdf',
   };
 
+  const location = useLocation();
+
   return (
     <Container className="app">
       <NavigationBar />
       <Row>
         <Col md={12}>
+         
           <Routes>
-            <Route path="/" element={<About />} />
+          <Route path="/" element={<About />} />
             <Route path="/projects" element={<Projects projects={projects} />} />
             <Route path="/skills" element={<Skills skills={skills} />} />
             <Route path="/contact" element={<Contact contactInfo={contactInfo} />} />
