@@ -3,7 +3,7 @@ import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-function NavigationBar() {
+function NavigationBar({children}) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -24,6 +24,9 @@ function NavigationBar() {
               Contact
             </Nav.Link>
           </Nav>
+          <div className="d-flex align-items-center">
+            {children}
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

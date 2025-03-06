@@ -11,3 +11,340 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.125);
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #212529;
+  --bg-secondary: #343a40;
+  --text-primary: #f8f9fa;
+  --text-secondary: #ced4da;
+  --card-bg: #343a40;
+  --card-border: rgba(255,255,255,0.125);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--card-border);
+}
+
+[data-theme="dark"] {
+  /* Navbar specific dark mode styles */
+  .navbar {
+    background-color: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--card-border);
+    border-top: none !important;
+    background-color: var(--bg-primary) !important;
+  }
+
+  .navbar-brand,
+  .nav-link {
+    color: var(--text-primary) !important;
+  }
+
+  /* Container and content dark mode styles */
+  .container {
+    background-color: var(--bg-primary);
+  }
+
+  /* Card dark mode styles */
+  .card {
+    background-color: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Navigation text */
+  .navbar-brand,
+  .nav-link,
+  .navbar-nav .nav-link,
+  /* General text */
+  p,
+  h1, h2, h3, h4, h5, h6,
+  /* List items */
+  li,
+  /* Links */
+  a,
+  /* Other text elements */
+  span,
+  div {
+    color: var(--text-primary) !important;
+  }
+
+  /* Button text in dark mode */
+  .btn-dark {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border-color: var(--text-primary);
+  }
+
+  /* ListGroup styling for dark mode */
+  .list-group-flush .list-group-item {
+    background-color: var(--bg-secondary) !important;
+    color: var (--text-primary) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  /* Card styling for dark mode */
+  .card {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .card-body {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Modal styling for dark mode */
+  .modal-content {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .modal-header {
+    background-color: var(--bg-secondary) !important;
+    border-bottom-color: var(--card-border) !important;
+  }
+
+  .modal-title {
+    color: var(--text-primary) !important;
+  }
+
+  .modal-body {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Close button in modal */
+  .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+
+  /* List items in modal */
+  .modal-body ul li {
+    color: var(--text-primary) !important;
+  }
+
+  /* Headings in modal */
+  .modal-body h5 {
+    color: var(--text-primary) !important;
+  }
+
+  /* Paragraphs in modal */
+  .modal-body p {
+    color: var(--text-primary) !important;
+  }
+
+  /* Remove grey border and set background for Navbar */
+  .navbar {
+    border-top: none !important;
+    border-bottom: 1px solid var(--card-border) !important;
+    background-color: var(--bg-primary) !important;
+  }
+
+  /* Style Nav Links to match theme */
+  .nav-link {
+    border: 1px solid var(--text-secondary) !important;
+    border-radius: 4px;
+    margin: 0 4px;
+    padding: 6px 12px !important;
+    color: var(--text-primary) !important;
+  }
+
+  .nav-link:hover {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  /* Dark mode styles for Contact section */
+  /* ListGroup styling */
+  .theme-aware-listgroup {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  .theme-aware-item {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Link styling */
+  .theme-aware-link {
+    color: var(--text-secondary) !important;
+    text-decoration: none;
+  }
+
+  .theme-aware-link:hover {
+    color: var(--text-primary) !important;
+    text-decoration: underline;
+  }
+}
+
+/* Light mode styles */
+[data-theme="light"] {
+  .navbar {
+    background-color: var(--bg-secondary) !important;
+    border: none !important;
+    background-color: var(--bg-secondary);
+    border-color: var(--text-primary);
+  }
+
+  .nav-link {
+    border: none !important;
+    margin: 0 4px;
+    padding: 6px 12px !important;
+  }
+}
+
+/* Make sure the theme toggle button is visible */
+.btn-dark,
+.btn-light {
+  z-index: 1030;
+  border: 2px solid var(--card-border);
+}
+
+/* Add these styles after your existing CSS */
+
+.btn.btn-light {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  transition: all 0.3s ease;
+}
+
+.btn.btn-dark {
+  background-color: #212529;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Update Theme Toggle button style */
+.btn.theme-toggle {
+  border-width: 1px !important;
+}
+
+/* Theme Toggle Switch Styles */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Update the slider base styles */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .6s;
+  border-radius: 34px;
+  border: 1px solid transparent; /* Add transparent border by default */
+  box-sizing: border-box; /* Prevent border from affecting size */
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .6s;
+  border-radius: 50%;
+}
+
+/* Update this existing rule */
+input:checked + .slider {
+  background-color: #212529; /* Changed from #2196F3 to a dark color */
+  border: 1px solid #fff; /* Added a white border */
+}
+
+/* Optional: Add hover state for better interaction */
+input:checked + .slider:hover {
+  background-color: #343a40;
+  border: 1px solid #fff; }
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Icons inside the toggle */
+.slider .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: white;
+}
+
+.slider .sun-icon {
+  left: 8px;
+}
+
+.slider .moon-icon {
+  right: 8px;
+}
+
+/* Video Background Styles */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Add overlay to improve content readability */
+.video-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+}

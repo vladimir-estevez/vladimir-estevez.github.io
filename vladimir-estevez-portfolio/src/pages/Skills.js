@@ -5,7 +5,7 @@ import SkillList from '../components/SkillList';
 function Skills({ skills }) {
   return (
     <section id="skills" className="skills">
-      <h2>Technical Skills</h2>
+      <h1 className='p-3 text-center'>Technical Skills</h1>
       <SkillList skills={skills} />
     </section>
   );
