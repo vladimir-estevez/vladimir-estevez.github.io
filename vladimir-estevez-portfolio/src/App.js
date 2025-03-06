@@ -30,7 +30,7 @@ function App() {
   return (
     <ThemeProvider>
     <Container className="app">
-      {/* <BackgroundVideo /> */}
+      <BackgroundVideo />
     <NavigationBar>
       <ThemeToggle />
       </NavigationBar>

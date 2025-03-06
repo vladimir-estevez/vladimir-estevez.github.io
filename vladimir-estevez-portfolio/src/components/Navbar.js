@@ -1,32 +1,36 @@
-
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function NavigationBar({children}) {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg" className="theme-aware-navbar"> 
       <Container>
-        <Navbar.Brand>Vladimir Estevez - Portfolio </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav ">
-          <Nav className="ms-auto ">
-            <Nav.Link as={Link} to="/">
+     
+      <Navbar.Brand>
+  <a href='/' style={{ textDecoration: 'none', color: 'inherit'  }}>Vladimir Estevez - Portfolio</a>
+</Navbar.Brand>
+        
+        <Navbar.Toggle 
+          aria-controls="basic-navbar-nav"
+          className="theme-aware-toggler"
+        />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link as={Link} to="/" className="nav-link theme-aware-link">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/projects">
+            <Nav.Link as={Link} to="/projects" className="nav-link theme-aware-link">
               Projects
             </Nav.Link>
-            <Nav.Link as={Link} to="/skills">
+            <Nav.Link as={Link} to="/skills" className="nav-link theme-aware-link">
               Skills
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact">
+            <Nav.Link as={Link} to="/contact" className="nav-link theme-aware-link">
               Contact
             </Nav.Link>
-          </Nav>
-          <div className="d-flex align-items-center">
             {children}
-          </div>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

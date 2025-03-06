@@ -13,12 +13,12 @@ code {
 }
 
 :root[data-theme="light"] {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
+  --bg-primary: #f7f7f7; /* An off-white background */
+  --bg-secondary: #f0f0f0; /* Update secondary if needed */
   --text-primary: #212529;
   --text-secondary: #6c757d;
   --card-bg: #ffffff;
-  --card-border: rgba(0,0,0,0.125);
+  --card-border: rgba(0, 0, 0, 0.125);
 }
 
 :root[data-theme="dark"] {
@@ -63,7 +63,7 @@ body {
   /* Card dark mode styles */
   .card {
     background-color: var(--card-bg) !important;
-    border-color: var(--card-border) !important;
+    border-color: var (--card-border) !important;
     color: var(--text-primary) !important;
   }
 
@@ -160,8 +160,11 @@ body {
     border: 1px solid var(--text-secondary) !important;
     border-radius: 4px;
     margin: 0 4px;
-    padding: 6px 12px !important;
+    padding: 6px 12px !important; /* Match light mode padding */
     color: var(--text-primary) !important;
+    display: flex !important;
+    align-items: center !important; /* Centers text vertically */
+    height: 32px !important; /* Set a fixed height */
   }
 
   .nav-link:hover {
@@ -191,6 +194,42 @@ body {
     color: var(--text-primary) !important;
     text-decoration: underline;
   }
+
+  /* Style the burger menu button */
+  .navbar-toggler {
+    border-color: var(--text-primary) !important;
+  }
+
+  /* Style the burger menu icon */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+
+  /* Add spacing between nav items in mobile view */
+  @media (max-width: 991px) {
+    .nav-link {
+      margin: 0.5rem 0 !important;
+      text-align: center;
+    }
+  }
+  
+  .about {
+    background-color: var(--bg-primary) !important;
+  }
+
+  .theme-aware-navbar {
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .theme-aware-navbar .navbar-brand,
+  .theme-aware-navbar .nav-link {
+    color: var(--text-primary) !important; /* Ensure text color is set for dark mode */
+  }
+
+  .theme-aware-link:hover {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
 }
 
 /* Light mode styles */
@@ -205,7 +244,42 @@ body {
   .nav-link {
     border: none !important;
     margin: 0 4px;
-    padding: 6px 12px !important;
+    padding: 6px 12px !important; /* Match dark mode padding */
+  }
+
+  /* Add spacing between nav items in mobile view */
+  @media (max-width: 991px) {
+    .nav-link {
+      margin: 0.5rem 0 !important;
+      text-align: center;
+      border: 1px solid var(--text-secondary) !important;
+      border-radius: 4px;
+    }
+
+    .nav-link:hover {
+      background-color: 6c757d !important;
+    }
+  }
+
+  .container,
+  .App,
+  .about {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .theme-aware-navbar {
+    border-bottom: 1px solid #333; /* Change to dark grey or black */
+  }
+
+  .theme-aware-navbar .navbar-brand,
+  .theme-aware-navbar .nav-link {
+    color: #000 !important; /* Set text color to black */
+  }
+
+  .theme-aware-link:hover {
+    background-color: #6c757d !important; /* Change to red */
+    color: #fff !important; /* White text */
+    border: 1px solid #6c757d !important; /* Red border */
   }
 }
 
@@ -213,7 +287,7 @@ body {
 .btn-dark,
 .btn-light {
   z-index: 1030;
-  border: 2px solid var(--card-border);
+  border: 2px solid var (--card-border);
 }
 
 /* Add these styles after your existing CSS */
@@ -245,7 +319,16 @@ body {
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  margin-left: 1rem;
+  justify-content: center; /* Add this */
+  margin: 0.5rem auto; /* Change from margin-left to margin */
+}
+
+/* Mobile view specific alignment */
+@media (max-width: 991px) {
+  .theme-switch-wrapper {
+    margin: 1rem auto; /* Add more vertical spacing in mobile view */
+    justify-content: center;
+  }
 }
 
 .theme-switch {
@@ -273,7 +356,8 @@ body {
   transition: .6s;
   border-radius: 34px;
   border: 1px solid transparent; /* Add transparent border by default */
-  box-sizing: border-box; /* Prevent border from affecting size */
+  box-sizing: border-box; 
+ 
 }
 
 
@@ -287,6 +371,7 @@ body {
   background-color: white;
   transition: .6s;
   border-radius: 50%;
+  
 }
 
 /* Update this existing rule */
@@ -347,4 +432,184 @@ input:checked + .slider:before {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+}
+
+/* Mobile Navbar Styles */
+.navbar-toggler {
+  border: 1px solid var(--card-border) !important;
+  padding: 0.5rem;
+}
+
+/* Add these styles to align navbar items */
+.navbar-collapse {
+  align-items: center !important;
+}
+
+.navbar-nav {
+  align-items: center !important;
+}
+
+/* Update the nav-link styles */
+.nav-link {
+  height: 38px !important; /* Increased to match Navbar.Brand height */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Ensure brand is vertically centered */
+.navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  height: 38px !important;
+}
+
+/* Shared nav-link styles for both modes */
+.nav-link {
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 4px;
+  padding: 6px 12px !important;
+  border: 1px solid transparent !important; /* Add transparent border by default */
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  min-width: 80px; /* Add minimum width for consistency */
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] {
+  .nav-link {
+    border-color: var(--text-secondary) !important;
+    padding: 6px 12px !important; /* Match light mode padding */
+  }
+}
+
+/* Light mode specific styles */
+[data-theme="light"] {
+  .nav-link {
+    padding: 6px 12px !important; /* Match dark mode padding */
+  }
+}
+
+/* Mobile styles for both modes */
+@media (max-width: 991px) {
+  .nav-link {
+    margin: 0.5rem 0 !important;
+    text-align: center;
+  }
+}
+
+/* Base nav-link styles (shared between modes) */
+.nav-link {
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 4px;
+  padding: 6px 12px !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  min-width: 80px; /* Add minimum width for consistency */
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] {
+  .nav-link {
+    border-color: var(--text-secondary) !important;
+    padding: 6px 12px !important; /* Match light mode padding */
+  }
+}
+
+/* Light mode specific styles */
+[data-theme="light"] {
+  .nav-link {
+    padding: 6px 12px !important; /* Match dark mode padding */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+  .nav-link {
+    margin: 0.5rem 0 !important;
+    padding: 6px 12px !important;
+    height: 38px !important;
+  }
+}
+
+/* Theme-aware navbar styles */
+.theme-aware-navbar {
+  background-color: var(--bg-primary) !important;
+  
+}
+
+/* Standardized nav-link styles */
+.nav-link.theme-aware-link {
+  box-sizing: border-box !important;
+  height: 38px !important;
+  min-width: 80px !important;
+  padding: 6px 12px !important;
+  margin: 0 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .nav-link.theme-aware-link {
+  border-color: var(--text-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+  .nav-link.theme-aware-link {
+    margin: 0.5rem 0 !important;
+    border-color: var(--text-secondary) !important;
+  }
+}
+
+/* Light mode styles */
+[data-theme="light"] {
+  .theme-aware-navbar {
+    border-bottom: 1px solid #333 !important; /* Change to dark grey or black */
+  }
+
+  .theme-aware-navbar .navbar-brand,
+  .theme-aware-navbar .nav-link {
+    color: #000 !important; /* Set text color to black */
+  }
+
+  .theme-aware-link {
+    transition: background-color 0.6s ease, color 0.6s ease, text-shadow 0.6s ease; /* Add transition */
+  }
+
+  .theme-aware-link:hover {
+    background-color: #c0c0c0 !important; /* Change to red */
+    color: #ffffff !important; /* White text */
+    border: 1px solid #2b2b2b !important; /* Red border */
+    text-shadow: #000 2px 1px 1px; /* Add text shadow */
+  }
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+  .theme-aware-navbar {
+    border-bottom: 1px solid var(--card-border) !important;
+  }
+
+  .theme-aware-navbar .navbar-brand,
+  .theme-aware-navbar .nav-link {
+    color: var(--text-primary) !important; /* Ensure text color is set for dark mode */
+  }
+
+  .theme-aware-link:hover {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
 }
