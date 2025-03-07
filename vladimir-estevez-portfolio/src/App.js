@@ -20,8 +20,8 @@ function App() {
 
   const contactInfo = {
     email: 'jvestev@gmail.com',
-    github: 'github.com/josevladimirestevez',
-    linkedin: 'linkedin.com/in/yourprofile',
+    github: 'www.github.com/josevladimirestevez',
+    linkedin: 'www.linkedin.com/in/vladimir-estevez-950b81237',
     resume: '/resume.pdf',
   };
 

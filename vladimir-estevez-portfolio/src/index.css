@@ -191,8 +191,11 @@ body {
   }
 
   .theme-aware-link:hover {
+    background-color: var(--bg-secondary) !important;
     color: var(--text-primary) !important;
-    text-decoration: underline;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important;
   }
 
   /* Style the burger menu button */
@@ -229,6 +232,17 @@ body {
   .theme-aware-link:hover {
     background-color: var(--bg-secondary) !important;
     color: var(--text-primary) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important;
+  }
+
+  .nav-link:hover {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important;
   }
 }
 
@@ -276,10 +290,25 @@ body {
     color: #000 !important; /* Set text color to black */
   }
 
+  .theme-aware-link {
+    transition: background-color 0.6s ease, color 0.6s ease, text-shadow 0.6s ease; /* Add transition */
+    text-decoration: none !important; /* Add this to ensure no underline by default */
+  }
+
   .theme-aware-link:hover {
-    background-color: #6c757d !important; /* Change to red */
+    background-color: #c0c0c0 !important; /* Change to red */
     color: #fff !important; /* White text */
-    border: 1px solid #6c757d !important; /* Red border */
+    border: 1px solid #2b2b2b !important; /* Red border */
+    text-decoration: underline !important; /* Add this for the underline effect */
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important; /* Optional: adjust underline thickness */
+  }
+
+  /* Add specific styles for nav-links */
+  .nav-link:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important;
   }
 }
 
@@ -587,13 +616,23 @@ input:checked + .slider:before {
 
   .theme-aware-link {
     transition: background-color 0.6s ease, color 0.6s ease, text-shadow 0.6s ease; /* Add transition */
+    text-decoration: none !important; /* Add this to ensure no underline by default */
   }
 
   .theme-aware-link:hover {
     background-color: #c0c0c0 !important; /* Change to red */
     color: #ffffff !important; /* White text */
     border: 1px solid #2b2b2b !important; /* Red border */
-    text-shadow: #000 2px 1px 1px; /* Add text shadow */
+    text-decoration: underline !important; /* Add this for the underline effect */
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important; /* Optional: adjust underline thickness */
+  }
+
+  /* Add specific styles for nav-links */
+  .nav-link:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important;
   }
 }
 
@@ -611,5 +650,87 @@ input:checked + .slider:before {
   .theme-aware-link:hover {
     background-color: var(--bg-secondary) !important;
     color: var(--text-primary) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important;
   }
+
+  .nav-link:hover {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
+    text-decoration-thickness: 1px !important;
+  }
+}
+
+.bi-dot {
+  font-size: 1.5rem;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+/* Base button styles */
+.btn-primary {
+  height: 38px !important;
+  min-width: 80px !important;
+  max-width: fit-content !important; /* Add this line to prevent full width */
+  padding: 6px 12px !important;
+  display: inline-flex !important; /* Change from flex to inline-flex */
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+  background-color: transparent !important;
+  font-size: inherit !important;
+  margin: 0 auto !important; /* Add this to center the button */
+}
+
+/* Remove or update this class if it's causing issues */
+.btn-primary.theme-aware-link {
+  height: 44px !important;
+  min-width: 120px !important;
+  max-width: fit-content !important;
+  padding: 8px 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Dark mode button styles */
+[data-theme="dark"] .btn-primary {
+  border: 1px solid var(--text-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Light mode button styles */
+[data-theme="light"] .btn-primary {
+  border: 1px solid var(--text-secondary) !important;
+  color: var(--text-primary) !important;
+  text-decoration: none !important; /* Add this to ensure no underline by default */
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background-color: #c0c0c0 !important;
+  color: #ffffff !important;
+  border: 1px solid #2b2b2b !important;
+  text-decoration: underline !important; /* Add this for the underline effect */
+}
+
+/* Update the existing .btn-primary styles or add these new styles */
+/* Update the .btn-primary.theme-aware-link styles */
+.btn-primary.theme-aware-link {
+  height: 44px !important;
+  min-width: 120px !important;
+  padding: 8px 16px !important;
+  font-size: 1.27rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important; /* Add this to ensure text is centered */
 }

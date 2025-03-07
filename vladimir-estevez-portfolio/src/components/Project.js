@@ -1,13 +1,99 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, ListGroup, Button, Modal, Badge } from 'react-bootstrap';
 import youtubeIcon from '../images/youtube.png';
+import pdfIcon from '../images/icons/pdf.png';
+import pptIcon from '../images/icons/ppt.png';
+import zipIcon from '../images/icons/zip.png';
+import jpgIcon from '../images/icons/jpg.png';
+import darkModeGit from '../images/darkModeGit.png';
+import lightModeGit from '../images/lightModeGit.png';
 
 
-const Project = ({ title, description, technologies, githubLink, image, extendedDescription, youtubeUrl }) => {
+const Project = ({ title, description, technologies, githubLink, image, extendedDescription, youtubeUrl, files }) => {
   const [showModal, setShowModal] = useState(false);
+  const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme'));
   
+  useEffect(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-theme') {
+          setTheme(document.documentElement.getAttribute('data-theme'));
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+
+
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
+
+  const getDownloadName = (filePath) => {
+    // Extract the base filename from the path
+    const filename = filePath.split('/').pop();
+    const parts = filename.split('.');
+    if (parts.length >= 3) {
+      // Remove the second to last part (assumed to be a hash) if it matches a basic hash pattern (hex characters)
+      const potentialHash = parts[parts.length - 2];
+      // Check if potentialHash is all hexadecimal (this is a simple check)
+      if (/^[0-9a-f]+$/i.test(potentialHash)) {
+        // Remove the hash portion
+        parts.splice(parts.length - 2, 1);
+      }
+      return parts.join('.');
+    }
+    return filename;
+  };
+
+  
+  
+  const getFileIcon = (filePath) => {
+    const extension = filePath.split('.').pop().toLowerCase();
+    if (extension === 'pdf') {
+      return (
+        <img
+          src={pdfIcon}
+          alt="PDF"
+          style={{ height: '21px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }}
+        />
+      );
+    }
+    if (extension === 'ppt' || extension === 'pptx') {
+      return (
+        <img
+          src={pptIcon}
+          alt="PPT"
+          style={{ height: '17px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }}
+        />
+      );
+    }
+    if(extension === 'zip') {
+      return (
+        <img
+          src={zipIcon}
+          alt="ZIP"
+          style={{ height: '19px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }}
+        />
+      );
+    }
+    if(extension === 'jpg' || extension === 'jpeg' || extension === 'png') {
+      return (
+        <img
+          src={jpgIcon}
+          alt="JPG"
+          style={{ height: '23px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }}
+        />
+      );}
+    return null;
+  };
+  
 
   // Extract YouTube video ID from URL
   const getYoutubeVideoId = (url) => {
@@ -68,22 +154,23 @@ const Project = ({ title, description, technologies, githubLink, image, extended
   variant="flush" 
   className="w-100 text-center"
 >
-  {technologies.map((tech, index) => (
+  {/* {technologies.map((tech, index) => (
     <ListGroup.Item 
       key={index}
       className="theme-aware-listitem"
     >
       {tech}
     </ListGroup.Item>
-  ))}
+  ))} */}
 </ListGroup>
           <div className="mt-auto d-flex justify-content-center">
-            <Button 
-              variant="primary"
-              onClick={handleShow}
-            >
-              Details
-            </Button>
+          <Button 
+  variant="primary"
+  onClick={handleShow}
+  className="theme-aware-link"
+>
+  Details
+</Button>
           </div>
         </Card.Body>
       </Card>
@@ -119,7 +206,26 @@ const Project = ({ title, description, technologies, githubLink, image, extended
           )}
           
           <h5>Project Description</h5>
-          <p>{extendedDescription || description}</p>
+{(extendedDescription || description).split('\n\n').map((paragraph, paraIdx) => (
+  <div key={paraIdx}>
+    {paragraph.startsWith('•') ? (
+      <ul className="list-unstyled mb-4">
+{paragraph.split('\r').map((line, lineIdx) => (
+  <li key={`${paraIdx}-${lineIdx}`} className="mb-2">
+  <i className="bi bi-asterisk me-2" style={{ 
+    fontSize: '0.6rem',
+    fontWeight: 'lighter',
+    opacity: '0.7'
+  }}></i>
+  {line.replace('•', '').trim()}
+</li>
+))}
+      </ul>
+    ) : (
+      <p key={paraIdx} className="mb-3">{paragraph}</p>
+    )}
+  </div>
+))}
           
           <h5>Technologies Used</h5>
           <ul className="mb-4">
@@ -127,16 +233,40 @@ const Project = ({ title, description, technologies, githubLink, image, extended
               <li key={index}>{tech}</li>
             ))}
           </ul>
-          
+               {/* New: List downloadable files if available */}
+               {files && files.length > 0 && (
+            <>
+              <h5>Downloadable Files</h5>
+              <ul className="list-unstyled mb-4">
+                {files.map((file, index) => (
+                  <li key={index}>
+                    <a href={file} download={getDownloadName(file)}>
+                    {getFileIcon(file)}{getDownloadName(file)}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           <div className="text-center">
-            <Button 
-              href={githubLink} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              variant="primary"
-            >
-              View on GitHub
-            </Button>
+          <Button 
+  href={githubLink} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  variant="primary"
+>
+  <img 
+    src={theme === 'dark' ? darkModeGit : lightModeGit} 
+    alt="GitHub" 
+    style={{ 
+      height: '25px', 
+      width: 'auto', 
+      marginRight: '8px',
+      verticalAlign: 'middle'
+    }} 
+  />
+  View on GitHub
+</Button>
             {youtubeUrl && (
               <Button 
                 href={youtubeUrl} 
