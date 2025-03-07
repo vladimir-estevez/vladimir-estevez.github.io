@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import {  } from 'react-bootstrap';
 import SkillList from '../components/SkillList';
 
 function Skills({ skills }) {

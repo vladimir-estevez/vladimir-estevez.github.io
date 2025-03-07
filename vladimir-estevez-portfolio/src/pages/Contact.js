@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col, ListGroup } from 'react-bootstrap';
+// Only import what you use
+import { ListGroup } from 'react-bootstrap';
 
 function Contact({ contactInfo }) {
   return (

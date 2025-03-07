@@ -14,18 +14,19 @@ import skills from './components/SkillList';
 import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import BackgroundVideo from './components/BackgroundVideo';
+import CVs from './files/CV and Reference Letters .zip'
 function App() {
 
 
 
   const contactInfo = {
     email: 'jvestev@gmail.com',
-    github: 'www.github.com/josevladimirestevez',
-    linkedin: 'www.linkedin.com/in/vladimir-estevez-950b81237',
-    resume: '/resume.pdf',
+    github: 'github.com/josevladimirestevez',
+    linkedin: 'linkedin.com/in/vladimir-estevez',
+    resume: CVs,
   };
 
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   return (
     <ThemeProvider>
