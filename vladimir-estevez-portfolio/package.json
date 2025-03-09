@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build && echo 'Deployed to GitHub Pages: https://vladimir-estevez.github.io'"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
