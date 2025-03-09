@@ -18,7 +18,7 @@ function App() {
 
   const contactInfo = {
     email: 'jvestev@gmail.com',
-    github: 'github.com/josevladimirestevez',
+    github: 'github.com/vladimir-estevez',
     linkedin: 'linkedin.com/in/vladimir-estevez',
     resume: CVs,
   };

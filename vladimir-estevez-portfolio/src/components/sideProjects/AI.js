@@ -6,22 +6,32 @@ import AIimage from '../../images/SideProjects/AI.png';
 import degree from '../../files/SideProjects/AI/AI Cohort - Certificate of Graduation.png';
 
 export const AIBasedProjects = {
-    title: 'AI-Based Projects',
-    description: 'Projects focused on using AI for predictive analysis in various domains.',
-    extendedDescription: 'These projects leverage AI and machine learning techniques to predict prices in different sectors. The projects include AI-based cryptocurrency price prediction and AI-based housing price prediction. The goal is to demonstrate the potential of AI in making accurate predictions and aiding decision-making processes.',
+    title: 'AI Cohort Graduate - Presented Two Different AI-Based Projects',
+    description: 'Followed the Dawson College AI-focused cohort, building two projects that leverage deep learning in time-series forecasting for real-world data.',
+    extendedDescription: 'These projects demonstrate the power of deep learning across two domains:\n\n'
+        + '1) A Bitcoin stock price prediction project using LSTM networks to forecast future price trends based on past market movements and trading volume.\n\n'
+        + '2) A housing price prediction project leveraging a similar LSTM-based approach to model and predict real estate prices.\n\n'
+        + 'Both projects highlight how AI can enhance predictive accuracy in financial and real estate scenarios.\r'
+        + 'Data preprocessing was carried out using Python libraries (NumPy, pandas, scikit-learn), while TensorFlow/Keras provided the deep learning framework.\r'
+        + 'Since the coding side of the project where too complex, our main focus was to be able to find projects that were already working and implement them with a database that we found online. The findings were presented at the Dawson College AI cohort, emphasizing how similar LSTM concepts can be transferred across different datasets for insightful results.',
+    
     technologies: [
         'Artificial Intelligence',
         'Machine Learning',
-        'Predictive Analysis',
-        'Data Science',
+        'Time Series Forecasting',
+        'Deep Learning',
         'Python',
+        'NumPy',
+        'pandas',
+        'scikit-learn',
         'TensorFlow',
         'Keras'
     ],
     githubLink: 'https://www.dawsoncollege.qc.ca/ai',
-    image: AIimage, // Add image URL if available
-    youtubeUrl: '', // Add YouTube URL if available
-    files: [blueprint,
+    image: AIimage,
+    youtubeUrl: '',
+    files: [
+        blueprint,
         aiCryptoPres,
         aiHousingPres,
         workshopFiles,
