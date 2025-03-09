@@ -12,20 +12,20 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^4.2.4"
   },
-  "homepage": "https://josevladimirestevez.github.io",
+  "homepage": "https://vladimir-estevez.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build && echo 'Deployed to GitHub Pages: https://josevladimirestevez.github.io'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ] 
   },
   "browserslist": {
     "production": [

@@ -18,7 +18,7 @@ export const mobileapp = {
     'Coil Image Loading',
     'Navigation Component'
   ],
-  githubLink: 'https://github.com/JoseVladimirEstevez/MobileAppFinal.git',
+  githubLink: 'https://github.com/vladimir-estevez/MobileAppFinal.git',
   image: mobileAppImage,
   youtubeUrl: 'https://www.youtube.com/watch?v=57tOAcrAxqc',
   files: [finalReport]

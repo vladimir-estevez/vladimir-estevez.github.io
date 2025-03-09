@@ -22,7 +22,7 @@ export const valcourt2030 = {
     'MongoDB',
     'AWS Elastic Beanstalk'
   ],
-  githubLink: 'https://github.com/JoseVladimirEstevez/IntegrativeProject2024.git',
+  githubLink: 'https://github.com/vladimir-estevez/IntegrativeProject2024.git',
   image: integrativeImage,
   youtubeUrl: 'https://www.youtube.com/watch?v=nCbgVUmYS0k',
   files: [

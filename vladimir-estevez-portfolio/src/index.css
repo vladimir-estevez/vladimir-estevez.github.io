@@ -169,6 +169,7 @@ body {
 
   .nav-link:hover {
     background-color: var(--bg-secondary) !important;
+    
   }
 
   /* Dark mode styles for Contact section */
@@ -733,4 +734,37 @@ input:checked + .slider:before {
   align-items: center !important;
   justify-content: center !important;
   line-height: 1 !important; /* Add this to ensure text is centered */
+}
+
+/* Contact link hover styles for both themes */
+.contact .theme-aware-link:hover {
+  color: #007bff !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px !important;
+  text-decoration-thickness: 1px !important;
+  transition: color 0.3s ease !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Remove the theme-specific styles that were causing conflicts */
+[data-theme="light"] .contact .theme-aware-link:hover {
+  color: #007bff !important;
+  text-shadow: none !important;
+}
+
+/* Contact list styles */
+.contact-list {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+.contact-list .theme-aware-item {
+  text-align: center !important;
+  padding: 1rem !important;
+}
+
+/* Adjust text size and spacing */
+.contact-list .theme-aware-item a {
+  margin-left: 0.5rem !important;
 }

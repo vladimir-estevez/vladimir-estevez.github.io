@@ -31,7 +31,7 @@ export const gamingProgramming = {
     'State Management',
     'Particle Systems'
   ],
-  githubLink: 'https://github.com/JoseVladimirEstevez/FinalGamingPrograminProject.git/',
+  githubLink: 'https://github.com/vladimir-estevez/FinalGamingPrograminProject.git/',
   image: gameImage,
   youtubeUrl: 'https://www.youtube.com/watch?v=qZtKKsmkXsg',
   files: [gameReport]

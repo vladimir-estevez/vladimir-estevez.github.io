@@ -28,7 +28,7 @@ export const quiz = {
     'CSS3',
     'JavaScript ES6+'
   ],
-  githubLink: 'https://github.com/JoseVladimirEstevez/finalQuiz.git',
+  githubLink: 'https://github.com/vladimir-estevez/finalQuiz.git',
   image: quizMultiplayerImage,
   youtubeUrl: 'https://www.youtube.com/watch?v=_lkzfcShq4o',
   files: [

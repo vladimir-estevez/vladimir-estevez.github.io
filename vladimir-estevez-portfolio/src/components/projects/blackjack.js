@@ -14,7 +14,7 @@ export const blackjack = {
     "VR Android Builds",
     "GitHub"
   ],
-  githubLink: "https://github.com/JoseVladimirEstevez/Blackjack-Project",
+  githubLink: "https://github.com/vladimir-estevez/Blackjack-Project",
   image: blackjackImage,
   youtubeUrl: "https://www.youtube.com/watch?v=eNn_3GNl5yU",
   files: [

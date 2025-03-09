@@ -7,6 +7,7 @@ import zipIcon from '../images/icons/zip.png';
 import jpgIcon from '../images/icons/jpg.png';
 import darkModeGit from '../images/darkModeGit.png';
 import lightModeGit from '../images/lightModeGit.png';
+import python from '../images/icons/Python.png';
 
 
 const Project = ({ title, description, technologies, githubLink, image, extendedDescription, youtubeUrl, files }) => {
@@ -56,6 +57,13 @@ const Project = ({ title, description, technologies, githubLink, image, extended
   
   const getFileIcon = (filePath) => {
     const extension = filePath.split('.').pop().toLowerCase();
+    if(extension === 'py' || extension === 'ipynb') {
+      return ( 
+        <img
+          src={python}
+          alt="Python"
+          style={{ height: '19px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }}></img>);
+    }
     if (extension === 'pdf') {
       return (
         <img
@@ -249,24 +257,36 @@ const Project = ({ title, description, technologies, githubLink, image, extended
             </>
           )}
           <div className="text-center">
-          <Button 
-  href={githubLink} 
-  target="_blank" 
-  rel="noopener noreferrer" 
-  variant="primary"
->
-  <img 
-    src={theme === 'dark' ? darkModeGit : lightModeGit} 
-    alt="GitHub" 
-    style={{ 
-      height: '25px', 
-      width: 'auto', 
-      marginRight: '8px',
-      verticalAlign: 'middle'
-    }} 
-  />
-  View on GitHub
-</Button>
+          {githubLink && githubLink.startsWith('https://git')  ? (
+            <Button 
+              href={githubLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              variant="primary"
+            >
+              <img 
+                src={theme === 'dark' ? darkModeGit : lightModeGit} 
+                alt="GitHub" 
+                style={{ 
+                  height: '25px', 
+                  width: 'auto', 
+                  marginRight: '8px',
+                  verticalAlign: 'middle'
+                }} 
+              />
+              View on GitHub
+            </Button>
+          ) : (
+            <Button 
+            href={githubLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              variant="primary"
+            >
+             
+              View Project Website
+            </Button>
+          )}
             {youtubeUrl && (
               <Button 
                 href={youtubeUrl} 

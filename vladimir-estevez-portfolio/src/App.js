@@ -1,16 +1,13 @@
 import React from 'react';
-
 import { Container, Row, Col } from 'react-bootstrap';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import NavigationBar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Skills from './pages/Skills';
 import Contact from './pages/Contact';
-// import Project from './components/Project';
-// import SkillList from './components/SkillList';
+import SideProjects from './pages/SideProjects'; // Update import name
 import projects from './components/ProjectList';
-import skills from './components/SkillList';
+import sideProjects from './components/SideProjectList';
 import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import BackgroundVideo from './components/BackgroundVideo';
@@ -41,7 +38,7 @@ function App() {
           <Routes>
           <Route path="/" element={<About />} />
             <Route path="/projects" element={<Projects projects={projects} />} />
-            <Route path="/skills" element={<Skills skills={skills} />} />
+            <Route path="/side-projects" element={<SideProjects sideProjects={sideProjects} />} /> {/* Update route */}
             <Route path="/contact" element={<Contact contactInfo={contactInfo} />} />
           </Routes>
         </Col>

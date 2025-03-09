@@ -19,7 +19,7 @@ export const greenlab = {
     'Bootstrap',
     'Node.js child_process'
   ],
-  githubLink: 'https://github.com/JoseVladimirEstevez/FinalProjectDBTWA.git',
+  githubLink: 'https://github.com/vladimir-estevez/FinalProjectDBTWA.git',
   image: wtaImage,
   youtubeUrl: 'https://www.youtube.com/watch?v=43VmpdmuTVk',
   files: [

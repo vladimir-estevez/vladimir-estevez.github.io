@@ -23,8 +23,8 @@ function NavigationBar({children}) {
             <Nav.Link as={Link} to="/projects" className="nav-link theme-aware-link">
               Projects
             </Nav.Link>
-            <Nav.Link as={Link} to="/skills" className="nav-link theme-aware-link">
-              Skills
+            <Nav.Link as={Link} to="/side-projects" className="nav-link theme-aware-link">
+              Side Projects
             </Nav.Link>
             <Nav.Link as={Link} to="/contact" className="nav-link theme-aware-link">
               Contact
