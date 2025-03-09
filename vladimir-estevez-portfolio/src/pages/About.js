@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function About() {
   return (
-    <section id="about" className="about py-5">
+    <section id="about" className="about py-3">
       <Row className="align-items-center mb-4">
         {/* Image column - will display first on mobile */}
         <Col md={4} className="text-center order-1 order-md-2 mb-4 mb-md-0">
@@ -52,14 +52,16 @@ function About() {
             </div>
           </div>
           
-          <div className="text-center mt-4">
-            <Link to="/projects">
-              <Button variant="primary" className="me-2">View My Projects</Button>
-            </Link>
-            <Link to="/contact">
-              <Button variant="primary">Contact Me</Button>
-            </Link>
-          </div>
+          <Row className="justify-content-center mt-4 mb-4">
+            <Col xs={12} className="d-flex justify-content-center">
+              <Link to="/projects">
+                <Button variant="primary" className="me-2">View My Projects</Button>
+              </Link>
+              <Link to="/contact">
+                <Button variant="primary">Contact Me</Button>
+              </Link>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </section>
