@@ -15,7 +15,7 @@ export const cicd = {
     'JSDoc',
     'Node.js'
   ],
-  githubLink: 'https://gitlab.com/vladimir-estevez/twa2finalproject',
+  githubLink: 'https://gitlab.com/VladimirEstevez/twa2finalproject',
   image: socialmediaImage,
   youtubeUrl: 'https://www.youtube.com/watch?v=fDu_EAvlN8M',
   files: [

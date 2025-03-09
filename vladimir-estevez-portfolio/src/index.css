@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
 }
 
 code {
@@ -12,9 +16,10 @@ code {
     monospace;
 }
 
+/* Theme variables */
 :root[data-theme="light"] {
-  --bg-primary: #f7f7f7; /* An off-white background */
-  --bg-secondary: #f0f0f0; /* Update secondary if needed */
+  --bg-primary: #f7f7f7;
+  --bg-secondary: #f0f0f0;
   --text-primary: #212529;
   --text-secondary: #6c757d;
   --card-bg: #ffffff;
@@ -30,335 +35,108 @@ code {
   --card-border: rgba(255,255,255,0.125);
 }
 
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: all 0.3s ease;
-}
-
+/* Common card styles */
 .card {
   background-color: var(--card-bg);
   border-color: var(--card-border);
 }
 
-[data-theme="dark"] {
-  /* Navbar specific dark mode styles */
-  .navbar {
-    background-color: var(--bg-secondary) !important;
-    border-bottom: 1px solid var(--card-border);
-    border-top: none !important;
-    background-color: var(--bg-primary) !important;
-  }
-
-  .navbar-brand,
-  .nav-link {
-    color: var(--text-primary) !important;
-  }
-
-  /* Container and content dark mode styles */
-  .container {
-    background-color: var(--bg-primary);
-  }
-
-  /* Card dark mode styles */
-  .card {
-    background-color: var(--card-bg) !important;
-    border-color: var (--card-border) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Navigation text */
-  .navbar-brand,
-  .nav-link,
-  .navbar-nav .nav-link,
-  /* General text */
-  p,
-  h1, h2, h3, h4, h5, h6,
-  /* List items */
-  li,
-  /* Links */
-  a,
-  /* Other text elements */
-  span,
-  div {
-    color: var(--text-primary) !important;
-  }
-
-  /* Button text in dark mode */
-  .btn-dark {
-    color: var(--text-primary);
-    background-color: var(--bg-secondary);
-    border-color: var(--text-primary);
-  }
-
-  /* ListGroup styling for dark mode */
-  .list-group-flush .list-group-item {
-    background-color: var(--bg-secondary) !important;
-    color: var (--text-primary) !important;
-    border-color: var(--card-border) !important;
-  }
-
-  /* Card styling for dark mode */
-  .card {
-    background-color: var(--bg-secondary) !important;
-  }
-
-  .card-body {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Modal styling for dark mode */
-  .modal-content {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-  }
-
-  .modal-header {
-    background-color: var(--bg-secondary) !important;
-    border-bottom-color: var(--card-border) !important;
-  }
-
-  .modal-title {
-    color: var(--text-primary) !important;
-  }
-
-  .modal-body {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Close button in modal */
-  .btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%);
-  }
-
-  /* List items in modal */
-  .modal-body ul li {
-    color: var(--text-primary) !important;
-  }
-
-  /* Headings in modal */
-  .modal-body h5 {
-    color: var(--text-primary) !important;
-  }
-
-  /* Paragraphs in modal */
-  .modal-body p {
-    color: var(--text-primary) !important;
-  }
-
-  /* Remove grey border and set background for Navbar */
-  .navbar {
-    border-top: none !important;
-    border-bottom: 1px solid var(--card-border) !important;
-    background-color: var(--bg-primary) !important;
-  }
-
-  /* Style Nav Links to match theme */
-  .nav-link {
-    border: 1px solid var(--text-secondary) !important;
-    border-radius: 4px;
-    margin: 0 4px;
-    padding: 6px 12px !important; /* Match light mode padding */
-    color: var(--text-primary) !important;
-    display: flex !important;
-    align-items: center !important; /* Centers text vertically */
-    height: 32px !important; /* Set a fixed height */
-  }
-
-  .nav-link:hover {
-    background-color: var(--bg-secondary) !important;
-    
-  }
-
-  /* Dark mode styles for Contact section */
-  /* ListGroup styling */
-  .theme-aware-listgroup {
-    background-color: var(--bg-secondary) !important;
-    border-color: var(--card-border) !important;
-  }
-
-  .theme-aware-item {
-    background-color: var(--bg-secondary) !important;
-    border-color: var(--card-border) !important;
-    color: var(--text-primary) !important;
-  }
-
-  /* Link styling */
-  .theme-aware-link {
-    color: var(--text-secondary) !important;
-    text-decoration: none;
-  }
-
-  .theme-aware-link:hover {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important;
-  }
-
-  /* Style the burger menu button */
-  .navbar-toggler {
-    border-color: var(--text-primary) !important;
-  }
-
-  /* Style the burger menu icon */
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-  }
-
-  /* Add spacing between nav items in mobile view */
-  @media (max-width: 991px) {
-    .nav-link {
-      margin: 0.5rem 0 !important;
-      text-align: center;
-    }
-  }
-  
-  .about {
-    background-color: var(--bg-primary) !important;
-  }
-
-  .theme-aware-navbar {
-    border-bottom: 1px solid var(--card-border);
-  }
-
-  .theme-aware-navbar .navbar-brand,
-  .theme-aware-navbar .nav-link {
-    color: var(--text-primary) !important; /* Ensure text color is set for dark mode */
-  }
-
-  .theme-aware-link:hover {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important;
-  }
-
-  .nav-link:hover {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important;
-  }
+/* Navbar styles - shared */
+.theme-aware-navbar {
+  background-color: var(--bg-primary) !important;
 }
 
-/* Light mode styles */
-[data-theme="light"] {
-  .navbar {
-    background-color: var(--bg-secondary) !important;
-    border: none !important;
-    background-color: var(--bg-secondary);
-    border-color: var(--text-primary);
-  }
-
-  .nav-link {
-    border: none !important;
-    margin: 0 4px;
-    padding: 6px 12px !important; /* Match dark mode padding */
-  }
-
-  /* Add spacing between nav items in mobile view */
-  @media (max-width: 991px) {
-    .nav-link {
-      margin: 0.5rem 0 !important;
-      text-align: center;
-      border: 1px solid var(--text-secondary) !important;
-      border-radius: 4px;
-    }
-
-    .nav-link:hover {
-      background-color: 6c757d !important;
-    }
-  }
-
-  .container,
-  .App,
-  .about {
-    background-color: var(--bg-secondary) !important;
-  }
-
-  .theme-aware-navbar {
-    border-bottom: 1px solid #333; /* Change to dark grey or black */
-  }
-
-  .theme-aware-navbar .navbar-brand,
-  .theme-aware-navbar .nav-link {
-    color: #000 !important; /* Set text color to black */
-  }
-
-  .theme-aware-link {
-    transition: background-color 0.6s ease, color 0.6s ease, text-shadow 0.6s ease; /* Add transition */
-    text-decoration: none !important; /* Add this to ensure no underline by default */
-  }
-
-  .theme-aware-link:hover {
-    background-color: #c0c0c0 !important; /* Change to red */
-    color: #fff !important; /* White text */
-    border: 1px solid #2b2b2b !important; /* Red border */
-    text-decoration: underline !important; /* Add this for the underline effect */
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important; /* Optional: adjust underline thickness */
-  }
-
-  /* Add specific styles for nav-links */
-  .nav-link:hover {
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important;
-  }
+.navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  height: 38px !important;
 }
 
-/* Make sure the theme toggle button is visible */
-.btn-dark,
-.btn-light {
-  z-index: 1030;
-  border: 2px solid var (--card-border);
+.navbar-toggler {
+  border: 1px solid var(--card-border) !important;
+  padding: 0.5rem;
 }
 
-/* Add these styles after your existing CSS */
-
-.btn.btn-light {
-  background-color: #fff;
-  color: #000;
-  border: 2px solid #000;
-  transition: all 0.3s ease;
+.navbar-collapse {
+  align-items: center !important;
 }
 
-.btn.btn-dark {
-  background-color: #212529;
-  color: #fff;
-  border: 2px solid #fff;
-  transition: all 0.3s ease;
+.navbar-nav {
+  align-items: center !important;
+}
+
+/* Nav links - shared styles */
+.nav-link, 
+.nav-link.theme-aware-link {
+  height: 38px !important;
+  min-width: 80px !important;
+  padding: 6px 12px !important;
+  margin: 0 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+}
+
+/* Button styles - shared */
+.btn-primary {
+  height: 38px !important;
+  min-width: 80px !important;
+  max-width: fit-content !important;
+  padding: 6px 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease-out !important; /* Faster, smoother transition */
+  background-color: transparent !important;
+  font-size: inherit !important;
+  margin: 0 auto !important;
+  border: 1px solid var(--text-secondary) !important;
+  color: var(--text-primary) !important;
+}
+
+.btn-primary.theme-aware-link {
+  height: 44px !important;
+  min-width: 120px !important;
+  padding: 8px 16px !important;
+  font-size: 1.27rem !important;
+  line-height: 1 !important;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) !important;
+  
 }
 
-/* Update Theme Toggle button style */
+/* Contact list styles */
+.contact-list {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+.contact-list .theme-aware-item {
+  text-align: center !important;
+  padding: 1rem !important;
+}
+
+.contact-list .theme-aware-item a {
+  margin-left: 0.5rem !important;
+}
+
+/* Theme toggle styles */
 .btn.theme-toggle {
   border-width: 1px !important;
 }
 
-/* Theme Toggle Switch Styles */
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center; /* Add this */
-  margin: 0.5rem auto; /* Change from margin-left to margin */
-}
-
-/* Mobile view specific alignment */
-@media (max-width: 991px) {
-  .theme-switch-wrapper {
-    margin: 1rem auto; /* Add more vertical spacing in mobile view */
-    justify-content: center;
-  }
+  justify-content: center;
+  margin: 0.5rem auto;
 }
 
 .theme-switch {
@@ -374,7 +152,6 @@ body {
   height: 0;
 }
 
-/* Update the slider base styles */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -385,11 +162,9 @@ body {
   background-color: #ccc;
   transition: .6s;
   border-radius: 34px;
-  border: 1px solid transparent; /* Add transparent border by default */
-  box-sizing: border-box; 
- 
+  border: 1px solid transparent;
+  box-sizing: border-box;
 }
-
 
 .slider:before {
   position: absolute;
@@ -401,25 +176,22 @@ body {
   background-color: white;
   transition: .6s;
   border-radius: 50%;
-  
 }
 
-/* Update this existing rule */
 input:checked + .slider {
-  background-color: #212529; /* Changed from #2196F3 to a dark color */
-  border: 1px solid #fff; /* Added a white border */
+  background-color: #212529;
+  border: 1px solid #fff;
 }
 
-/* Optional: Add hover state for better interaction */
 input:checked + .slider:hover {
   background-color: #343a40;
-  border: 1px solid #fff; }
+  border: 1px solid #fff; 
+}
 
 input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Icons inside the toggle */
 .slider .icon {
   position: absolute;
   top: 50%;
@@ -436,7 +208,7 @@ input:checked + .slider:before {
   right: 8px;
 }
 
-/* Video Background Styles */
+/* Video background */
 .video-background {
   position: fixed;
   top: 0;
@@ -453,7 +225,6 @@ input:checked + .slider:before {
   object-fit: cover;
 }
 
-/* Add overlay to improve content readability */
 .video-background::after {
   content: '';
   position: absolute;
@@ -461,310 +232,337 @@ input:checked + .slider:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  background: rgba(0, 0, 0, 0.5);
 }
 
-/* Mobile Navbar Styles */
-.navbar-toggler {
-  border: 1px solid var(--card-border) !important;
-  padding: 0.5rem;
-}
-
-/* Add these styles to align navbar items */
-.navbar-collapse {
-  align-items: center !important;
-}
-
-.navbar-nav {
-  align-items: center !important;
-}
-
-/* Update the nav-link styles */
-.nav-link {
-  height: 38px !important; /* Increased to match Navbar.Brand height */
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* Ensure brand is vertically centered */
-.navbar-brand {
-  display: flex !important;
-  align-items: center !important;
-  height: 38px !important;
-}
-
-/* Shared nav-link styles for both modes */
-.nav-link {
-  height: 38px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 4px;
-  padding: 6px 12px !important;
-  border: 1px solid transparent !important; /* Add transparent border by default */
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  min-width: 80px; /* Add minimum width for consistency */
-}
-
-/* Dark mode specific styles */
-[data-theme="dark"] {
-  .nav-link {
-    border-color: var(--text-secondary) !important;
-    padding: 6px 12px !important; /* Match light mode padding */
-  }
-}
-
-/* Light mode specific styles */
-[data-theme="light"] {
-  .nav-link {
-    padding: 6px 12px !important; /* Match dark mode padding */
-  }
-}
-
-/* Mobile styles for both modes */
-@media (max-width: 991px) {
-  .nav-link {
-    margin: 0.5rem 0 !important;
-    text-align: center;
-  }
-}
-
-/* Base nav-link styles (shared between modes) */
-.nav-link {
-  height: 38px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 4px;
-  padding: 6px 12px !important;
-  border: 1px solid transparent !important;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  min-width: 80px; /* Add minimum width for consistency */
-}
-
-/* Dark mode specific styles */
-[data-theme="dark"] {
-  .nav-link {
-    border-color: var(--text-secondary) !important;
-    padding: 6px 12px !important; /* Match light mode padding */
-  }
-}
-
-/* Light mode specific styles */
-[data-theme="light"] {
-  .nav-link {
-    padding: 6px 12px !important; /* Match dark mode padding */
-  }
-}
-
-/* Mobile styles */
-@media (max-width: 991px) {
-  .nav-link {
-    margin: 0.5rem 0 !important;
-    padding: 6px 12px !important;
-    height: 38px !important;
-  }
-}
-
-/* Theme-aware navbar styles */
-.theme-aware-navbar {
-  background-color: var(--bg-primary) !important;
-  
-}
-
-/* Standardized nav-link styles */
-.nav-link.theme-aware-link {
-  box-sizing: border-box !important;
-  height: 38px !important;
-  min-width: 80px !important;
-  padding: 6px 12px !important;
-  margin: 0 4px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border: 1px solid transparent !important;
-  border-radius: 4px !important;
-  transition: all 0.3s ease !important;
-}
-
-/* Dark mode styles */
-[data-theme="dark"] .nav-link.theme-aware-link {
-  border-color: var(--text-secondary) !important;
-  color: var(--text-primary) !important;
-}
-
-/* Mobile styles */
-@media (max-width: 991px) {
-  .nav-link.theme-aware-link {
-    margin: 0.5rem 0 !important;
-    border-color: var(--text-secondary) !important;
-  }
-}
-
-/* Light mode styles */
-[data-theme="light"] {
-  .theme-aware-navbar {
-    border-bottom: 1px solid #333 !important; /* Change to dark grey or black */
-  }
-
-  .theme-aware-navbar .navbar-brand,
-  .theme-aware-navbar .nav-link {
-    color: #000 !important; /* Set text color to black */
-  }
-
-  .theme-aware-link {
-    transition: background-color 0.6s ease, color 0.6s ease, text-shadow 0.6s ease; /* Add transition */
-    text-decoration: none !important; /* Add this to ensure no underline by default */
-  }
-
-  .theme-aware-link:hover {
-    background-color: #c0c0c0 !important; /* Change to red */
-    color: #ffffff !important; /* White text */
-    border: 1px solid #2b2b2b !important; /* Red border */
-    text-decoration: underline !important; /* Add this for the underline effect */
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important; /* Optional: adjust underline thickness */
-  }
-
-  /* Add specific styles for nav-links */
-  .nav-link:hover {
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important;
-  }
-}
-
-/* Dark mode styles */
-[data-theme="dark"] {
-  .theme-aware-navbar {
-    border-bottom: 1px solid var(--card-border) !important;
-  }
-
-  .theme-aware-navbar .navbar-brand,
-  .theme-aware-navbar .nav-link {
-    color: var(--text-primary) !important; /* Ensure text color is set for dark mode */
-  }
-
-  .theme-aware-link:hover {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important;
-  }
-
-  .nav-link:hover {
-    background-color: var(--bg-secondary) !important;
-    color: var(--text-primary) !important;
-    text-decoration: underline !important;
-    text-underline-offset: 6px !important; /* Increased from 5px to 8px */
-    text-decoration-thickness: 1px !important;
-  }
-}
-
+/* Misc utility styles */
 .bi-dot {
   font-size: 1.5rem;
   line-height: 0;
   vertical-align: middle;
 }
 
-/* Base button styles */
-.btn-primary {
-  height: 38px !important;
-  min-width: 80px !important;
-  max-width: fit-content !important; /* Add this line to prevent full width */
-  padding: 6px 12px !important;
-  display: inline-flex !important; /* Change from flex to inline-flex */
-  align-items: center !important;
-  justify-content: center !important;
+/* Google Translate Widget Styles */
+.translate-widget-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+  z-index: 1000;
+}
+
+#google_translate_element {
+  width: 100%;
+  cursor: pointer;
+}
+
+.goog-te-gadget {
+  font-family: inherit !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: 1px solid var(--card-border) !important;
   border-radius: 4px !important;
-  transition: all 0.3s ease !important;
-  background-color: transparent !important;
-  font-size: inherit !important;
-  margin: 0 auto !important; /* Add this to center the button */
-}
-
-/* Remove or update this class if it's causing issues */
-.btn-primary.theme-aware-link {
-  height: 44px !important;
-  min-width: 120px !important;
-  max-width: fit-content !important;
-  padding: 8px 16px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* Dark mode button styles */
-[data-theme="dark"] .btn-primary {
-  border: 1px solid var(--text-secondary) !important;
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .btn-primary:hover {
-  background-color: var(--bg-secondary) !important;
-  color: var(--text-primary) !important;
-}
-
-/* Light mode button styles */
-[data-theme="light"] .btn-primary {
-  border: 1px solid var(--text-secondary) !important;
-  color: var(--text-primary) !important;
-  text-decoration: none !important; /* Add this to ensure no underline by default */
-}
-
-[data-theme="light"] .btn-primary:hover {
-  background-color: #c0c0c0 !important;
-  color: #ffffff !important;
-  border: 1px solid #2b2b2b !important;
-  text-decoration: underline !important; /* Add this for the underline effect */
-}
-
-/* Update the existing .btn-primary styles or add these new styles */
-/* Update the .btn-primary.theme-aware-link styles */
-.btn-primary.theme-aware-link {
-  height: 44px !important;
-  min-width: 120px !important;
-  padding: 8px 16px !important;
-  font-size: 1.27rem !important;
+  padding: 4px 8px !important;
+  width: 100% !important;
   display: flex !important;
+  justify-content: space-between !important;
   align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important; /* Add this to ensure text is centered */
 }
 
-/* Contact link hover styles for both themes */
-.contact .theme-aware-link:hover {
-  color: #007bff !important;
-  text-decoration: underline !important;
-  text-underline-offset: 4px !important;
-  text-decoration-thickness: 1px !important;
-  transition: color 0.3s ease !important;
-  background-color: transparent !important;
-  border: none !important;
+.goog-te-gadget-simple::before {
+  content: "Language";
+  margin-right: 8px;
+  display: inline-block;
 }
 
-/* Remove the theme-specific styles that were causing conflicts */
-[data-theme="light"] .contact .theme-aware-link:hover {
-  color: #007bff !important;
-  text-shadow: none !important;
+.goog-te-gadget-simple img,
+.goog-te-gadget > span {
+  display: none !important;
 }
 
-/* Contact list styles */
-.contact-list {
-  max-width: 600px !important;
-  margin: 0 auto !important;
+.goog-te-menu-frame {
+  z-index: 9999 !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3) !important;
 }
 
-.contact-list .theme-aware-item {
-  text-align: center !important;
-  padding: 1rem !important;
+.nav-link.translate-nav-item {
+  min-width: 140px;
+  display: flex !important;
+  padding: 6px 10px !important;
+  margin: 0 5px !important;
+  overflow: visible;
+  z-index: 999;
 }
 
-/* Adjust text size and spacing */
-.contact-list .theme-aware-item a {
-  margin-left: 0.5rem !important;
+p, h1, h2, h3, h4, h5, h6,
+li, a, span, div {
+  color: var(--text-primary) !important;
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+  /* Navbar styling */
+  .navbar {
+    background-color: var(--bg-primary) !important;
+    border-bottom: 1px solid var(--card-border) !important;
+    border-top: none !important;
+  }
+
+  .navbar-brand,
+  .nav-link {
+    color: var(--text-primary) !important;
+  }
+
+  .nav-link {
+    border-color: var(--text-secondary) !important;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+
+  /* Content and container styles */
+  .container {
+    background-color: var(--bg-primary);
+  }
+  
+  .about {
+    background-color: var(--bg-primary) !important;
+  }
+
+  /* Card styles */
+  .card, 
+  .card-body {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  /* Text elements */
+  .navbar-brand,
+  .nav-link,
+  .navbar-nav .nav-link,
+  p, h1, h2, h3, h4, h5, h6,
+  li, a, span, div {
+    color: var(--text-primary) !important;
+  }
+
+  /* Button styles */
+  .btn-dark {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    border-color: var(--text-primary);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--bg-secondary) !important;
+    
+  }
+
+  /* List group styling */
+  .list-group-flush .list-group-item,
+  .theme-aware-item {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  .theme-aware-listgroup {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--card-border) !important;
+  }
+
+  /* Modal styling */
+  .modal-content,
+  .modal-header,
+  .modal-body {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .modal-header {
+    border-bottom-color: var(--card-border) !important;
+  }
+
+  .modal-title,
+  .modal-body h5,
+  .modal-body p,
+  .modal-body ul li {
+    color: var(--text-primary) !important;
+  }
+
+  .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+
+  /* Link styling */
+  .theme-aware-link {
+    color: var(--text-secondary) !important;
+    text-decoration: none;
+  }
+
+  .theme-aware-link:hover,
+  .nav-link:hover {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+    text-decoration-thickness: 1px !important;
+    transform: scale(1.05) !important; /* Add this line */
+  }
+
+  /* Google Translate styles */
+  .goog-te-gadget-simple {
+    color: var(--text-primary) !important;
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--text-secondary) !important;
+  }
+
+  .goog-te-menu-value span {
+    color: var(--text-primary) !important;
+  }
+
+  /* Fix for footer text */
+  .footer {
+    color: var(--text-primary) !important;
+  }
+
+  /* Contact link hover override for dark mode */
+  .contact .theme-aware-link:hover {
+    color: #3a9fff !important;  /* Brighter blue for dark mode */
+    background-color: transparent !important;
+    border: none !important;
+    text-decoration: underline !important;
+  }
+}
+
+/* Light Mode Styles */
+[data-theme="light"] {
+  /* Navbar styling */
+  .navbar {
+    background-color: var(--bg-secondary) !important;
+    border: none !important;
+  }
+
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #000 !important;
+  }
+
+  /* Container styles */
+  .container,
+  .App,
+  .about {
+    background-color: var(--bg-secondary) !important;
+  }
+
+  .theme-aware-navbar {
+    border-bottom: 1px solid #333 !important;
+  }
+
+  /* Button styles */
+  .btn-primary:hover {
+    background-color: #c0c0c0 !important;
+    color: #ffffff !important;
+    border: 1px solid #2b2b2b !important;
+    /* Remove text-decoration to prevent flickering */
+  }
+
+  /* Link styling */
+  .theme-aware-link {
+    transition: background-color 0.6s ease, color 0.6s ease, text-shadow 0.6s ease;
+    text-decoration: none !important;
+  }
+
+  .theme-aware-link:hover,
+  .nav-link:hover {
+    background-color: #c0c0c0 !important;
+    color: #fff !important;
+    border: 1px solid #2b2b2b !important;
+    text-decoration: underline !important;
+    text-underline-offset: 6px !important;
+    text-decoration-thickness: 1px !important;
+    transform: scale(1.05) !important; /* Add this line */
+  }
+
+  /* Contact link hover override */
+  .contact .theme-aware-link:hover {
+    color: #007bff !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  /* Google Translate styles */
+  .goog-te-gadget-simple {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--text-secondary) !important;
+  }
+
+  .goog-te-menu-value {
+    color: var(--text-primary) !important;
+  }
+
+  /* Fix for footer text */
+  .footer {
+    color: var(--text-primary) !important;
+  }
+}
+
+/* Common footer styling */
+.footer {
+  border-top: 1px solid var(--card-border);
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+  .nav-link, 
+  .nav-link.theme-aware-link {
+    margin: 0.5rem 0 !important;
+    text-align: center;
+    border-color: var(--text-secondary) !important;
+  }
+
+
+  [data-theme="light"] .nav-link:hover {
+    background-color: 6c757d !important;
+  }
+}
+
+/* Fix for Badge text color */
+.badge {
+  color: white !important; /* This ensures white text on dark badges */
+}
+
+/* Add this to your CSS file */
+.project.card {
+  min-height: 400px;  /* Adjust this value as needed */
+}
+
+/* For smaller screens, you might want to reduce the height */
+@media (max-width: 768px) {
+  .project.card {
+    min-height: 350px;  /* Smaller height for mobile */
+  }
+}
+
+/* Add this to your CSS file */
+.btn-danger, 
+.btn-danger * {
+  color: white !important;
+}
+
+/* This ensures the YouTube button text and icon stay white in both themes */
+[data-theme="light"] .btn-danger, 
+[data-theme="light"] .btn-danger *,
+[data-theme="dark"] .btn-danger, 
+[data-theme="dark"] .btn-danger * {
+  color: white !important;
 }

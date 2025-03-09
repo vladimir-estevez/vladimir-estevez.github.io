@@ -118,7 +118,8 @@ const Project = ({ title, description, technologies, githubLink, image, extended
       <Card 
         className="project h-100 text-center border-light shadow-sm" 
         style={{ 
-          transition: 'transform 0.3s, box-shadow 0.3s'
+          transition: 'transform 0.3s, box-shadow 0.3s',
+          
         }}
         onMouseOver={(e) => {
           e.currentTarget.style.transform = 'translateY(-5px)';
@@ -162,14 +163,6 @@ const Project = ({ title, description, technologies, githubLink, image, extended
   variant="flush" 
   className="w-100 text-center"
 >
-  {/* {technologies.map((tech, index) => (
-    <ListGroup.Item 
-      key={index}
-      className="theme-aware-listitem"
-    >
-      {tech}
-    </ListGroup.Item>
-  ))} */}
 </ListGroup>
           <div className="mt-auto d-flex justify-content-center">
           <Button 

@@ -26,9 +26,17 @@ function NavigationBar({children}) {
             <Nav.Link as={Link} to="/side-projects" className="nav-link theme-aware-link">
               Side Projects
             </Nav.Link>
-            <Nav.Link as={Link} to="/contact" className="nav-link theme-aware-link">
-              Contact
-            </Nav.Link>
+            <div className='d-none d-lg-block pe-2'>
+  <Nav.Link as={Link} to="/contact" className="nav-link theme-aware-link">
+    Contact
+  </Nav.Link>
+</div>
+
+<div className='d-block d-lg-none'>
+  <Nav.Link as={Link} to="/contact" className="nav-link theme-aware-link">
+    Contact
+  </Nav.Link>
+</div>
             {children}
           </Nav>
         </Navbar.Collapse>
