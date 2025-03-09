@@ -23,7 +23,7 @@ export const DataJournalismChallenge = {
         + '• Recommended stronger government regulations\n\n'
         + '• Emphasized the importance of public awareness about major emission sources\n\n'
         + '\n\n'
-        + 'The project earned both the Technical Excellence Award for its analytical rigor and the People\'s Choice Award for effectively communicating complex environmental data to the public.',
+        + 'The project earned both the Technical Excellence Award for its analytical rigor and the People\'s Choice Award for being the project with most votes from the public.',
     
     technologies: [
         'Data Science',
