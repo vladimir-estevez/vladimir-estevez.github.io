@@ -6,7 +6,7 @@ import AIimage from '../../images/SideProjects/AI.png';
 import degree from '../../files/SideProjects/AI/AI Cohort - Certificate of Graduation.png';
 
 export const AIBasedProjects = {
-    title: 'AI Cohort - Two Different AI-Based Projects',
+    title: 'AI Cohort - AI-Based Projects',
     description: 'Followed the Dawson College AI-focused cohort, building two projects that leverage deep learning in time-series forecasting for real-world data.',
     extendedDescription: 'As part of the Dawson College AI cohort, I completed comprehensive coursework on Machine Learning and Deep Learning fundamentals, including LLMs (Large Language Models), Linear Regression techniques, and essential Python programming skills. Our culminating assignment was to develop an AI Project Blueprint—a detailed guide outlining the methodology and considerations for implementing an AI solution to address real-world problems.\n\n' +
         'Working collaboratively across two different teams, I contributed to projects that showcase the potential of deep learning in time-series forecasting across two distinct domains:\n\n' +
