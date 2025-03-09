@@ -5,7 +5,7 @@ import { getDownloadName } from '../components/getDownloadName';
 
 function Contact({ contactInfo }) {
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact py-3">
       <h1 className='p-3 text-center'>Contact Me</h1>
       <div className="d-flex justify-content-center">
         <ListGroup className="theme-aware-listgroup contact-list w-75">
