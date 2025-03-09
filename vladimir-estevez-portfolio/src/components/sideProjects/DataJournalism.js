@@ -5,13 +5,19 @@ import realEmittersImage from '../../images/SideProjects/DataChallenge.jpg';
 
 export const DataJournalismChallenge = { 
     title: 'DawsCon 2023 - Data Journalism Challenge Winner',
-    description: 'Award-winning data science project focused on climate change visualization and analysis, earning both the Technical Excellence and People\'s Choice awards at the DawsCon 2023 Data Journalism Challenge.',
-    extendedDescription: `Participated in and won two major awards at the DawsCon 2023 Data Journalism Challenge, where we explored climate change data through innovative data science approaches. The project earned the Technical Award for demonstrating exceptional technical skills and the People's Choice Award based on public voting.\n\n
-    Overview:\n
-    Our winning submission addressed one of the most urgent challenges of our century - climate change mitigation. We focused on understanding emission sources and their evolution over time, utilizing advanced data science tools to parse massive datasets and create compelling interactive visualizations.\n\n
-    Project Achievement:\n
-    In the DawsCon – DawsonAI data challenge, we transformed complex CO2 emissions data from Canadian provinces into accessible visual narratives for the general public. Inspired by Our World in Data's approach, we developed impactful data visualizations that resonated with both technical judges and the general audience, leading to our dual award victory.\n\n
-    The project demonstrated how effective data visualization can influence informed decision-making about climate change and environmental preservation, earning recognition for both its technical sophistication and public engagement.`,
+    description: 'Award-winning data science project focused on analyzing and visualizing the real sources of greenhouse gas emissions in Canada, challenging per capita models and identifying key industrial contributors.',
+    extendedDescription: `Participated in and won two major awards at the DawsCon 2023 Data Journalism Challenge, examining the fairness of per capita emission statistics and identifying where climate change mitigation efforts should be focused.\n\n
+    Key Questions Addressed:\n
+    • Are statistics by capita model fair?\n
+    • Are we putting the right effort at the right place?\n
+    • Can we remodel the data to show us where to focus?\n\n
+    Methodology:\n
+    Our analysis focused on extracting and analyzing data from the energy combustion industry, comparing national and sector-specific emission levels, and developing a more accurate representation by isolating sector contributions. We utilized data from Environment Canada's National Inventory Report, Alberta Government's crude oil pricing, and Statistics Canada's greenhouse gas emissions accounts.\n\n
+    Key Findings and Recommendations:\n
+    • Identified the need to shift environmental debate focus to key industries\n
+    • Recommended stronger government regulations\n
+    • Emphasized the importance of public awareness about major emission sources\n\n
+    The project earned both the Technical Excellence Award for its analytical rigor and the People's Choice Award for effectively communicating complex environmental data to the public.`,
     technologies: [
         'Data Science',
         'Python',
