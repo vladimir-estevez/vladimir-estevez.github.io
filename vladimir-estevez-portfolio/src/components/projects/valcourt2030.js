@@ -1,4 +1,3 @@
-
 import integrativeImage from '../../images/projects/integrative project.jpg';
 import valcourt2030slides from '../../files/integrativeProject/Valcourt 2030 -  Presentation.pptx';
 import valcourt2030report from '../../files/integrativeProject/Valcourt 2030 - Comprehensive Assesment - Report.pdf';
@@ -6,25 +5,44 @@ import valcourt2030deploy from '../../files/integrativeProject/Valcourt 2030 - D
 
 export const valcourt2030 = {
   title: 'Integrative Project: Valcourt2030',
-  description: 'A dynamic web portal that fosters community engagement and streamlines local event notifications for Valcourt2030.',
-  extendedDescription: 'Valcourt2030 is a comprehensive web application developed to enhance community engagement for newcomers, foreign workers, and long-time residents. The platform enables personalized notifications through interest-based user registration and features a robust tag-based system to inform users about upcoming local events.\n\nIt seamlessly integrates with an existing WordPress site via API and webhooks—automatically receiving event data and sending email notifications to users with matching interests. Additionally, the backend utilizes node-cron to schedule a daily task that runs at midnight, notifying all registered users about events occurring in exactly three days.\n\nWith features including user account management, event filtering by tags and dates, and registration tracking, Valcourt2030 is designed for efficiency, usability, and scalability, making community information accessible to everyone.',
+
+  description: 'A dynamic community portal that connects residents through personalized event notifications and fosters local engagement in Valcourt.',
+
+  extendedDescription: 
+    'As our final semester Integrative Project, we developed a web application for Valcourt2030 (<a>www.valcourt2030.org</a>), an NGO based in the Valcourt region of Quebec . The platform was specifically designed to bridge communication gaps between newcomers, foreign workers, and established residents in the community by streamlining notification delivery and facilitating interactions between Valcourt2030 managers and users.\n\n' +
+    'At its core, the platform features an intelligent interest-based notification system where users can register their preferences and receive targeted updates about relevant community events. The powerful tag-based filtering system ensures users only receive information that matches their specific interests.\n\n' +
+    'The application leverages a seamless integration with the existing WordPress infrastructure through RESTful APIs and webhook technology. This integration enables automatic event data synchronization and triggers personalized email notifications to users based on their registered interests.\n\n' +
+    'For enhanced user experience, the backend implements node-cron scheduling that executes a daily task at midnight to send reminder notifications about events happening exactly three days in the future, helping community members plan accordingly.\n\n' +
+    'Security is paramount in the Valcourt2030 architecture. The system implements JWT authentication with 24-hour token expiration, bcrypt password hashing for credential protection, and comprehensive email verification protocols for new accounts. Password management includes secure reset and modification workflows with token-based verification through email confirmation. Protected routes are safeguarded by validation middleware that redirects unauthorized access attempts.\n\n' +
+    'Valcourt2030 delivers a comprehensive suite of features including intuitive user account management, multi-parameter event filtering, and attendance tracking—all designed with efficiency, accessibility, and scalability in mind to serve the diverse needs of the Valcourt community.',
+
   technologies: [
+    // Frontend
+    'ReactJS',
     'HTML/CSS3',
     'JavaScript',
-    'Git Workflow',
-    'ReactJS',
-    'WordPress',
-    'Webhooks',
-    'XAMPP',
+    // Backend
     'NodeJS',
     'ExpressJS',
-    'node-cron',
     'MongoDB',
-    'AWS Elastic Beanstalk'
+    // Integration
+    'WordPress API',
+    'Webhooks',
+    // Security
+    'JWT Authentication',
+    'Bcrypt',
+    // DevOps
+    'Git Workflow',
+    'XAMPP',
+    'AWS Elastic Beanstalk',
+    // Utilities
+    'node-cron'
   ],
+
   githubLink: 'https://github.com/vladimir-estevez/IntegrativeProject2024.git',
   image: integrativeImage,
   youtubeUrl: 'https://www.youtube.com/watch?v=nCbgVUmYS0k',
+
   files: [
     valcourt2030deploy,
     valcourt2030report,

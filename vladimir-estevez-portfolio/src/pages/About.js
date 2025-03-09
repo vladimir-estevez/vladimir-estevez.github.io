@@ -25,7 +25,7 @@ function About() {
         {/* Content column - will display second on mobile */}
         <Col md={8} className="order-2 order-md-1">
           <h1 className="mb-3 text-center fw-bold">About Me</h1>
-          <div className="p-3 rounded shadow-sm mb-4" style={{ backgroundColor: 'var(--card-bg-secondary)', color: 'var(--text-primary)' }}>
+          <div className="p-3  mb-4" style={{ backgroundColor: 'var(--card-bg-secondary)', color: 'var(--text-primary)' }}>
             <div className='lead'>
               <p className="text-center">
                 I am a 2024 Computer Science graduate from Champlain College passionate about <strong>Full-Stack Web and Software Development</strong>.
@@ -39,8 +39,8 @@ function About() {
               <h3 className="mb-3 text-center">Technical Expertise</h3>
               <div> 
                 <p className="mb-3 text-center">
-                  My technical expertise includes <span className="fw-bolder">JavaScript (React, Node.js), Python, C#, Kotlin, and SQL</span>, 
-                  along with experience in <span className="fw-bolder">AWS cloud technologies</span> (Redshift, EC2 and others) and <span className="fw-bolder">CI/CD pipelines</span>.
+                  My technical expertise includes <span className="fw-bolder">JavaScript (React, Node.js), Python, C#, Java (Kotlin), SQL and MongoDB</span>, 
+                  along with experience in <span className="fw-bolder">AWS cloud technologies</span> (Redshift, Elastic Beanstalk, Lambda), <span className="fw-bolder">XAMPP</span> for local development environments, and <span className="fw-bolder">CI/CD pipelines</span>.
                 </p>
                 <p className="mb-3 text-center">
                   I have developed projects involving <span className="fw-bolder">data visualization, virtual reality, and automation</span>, always focusing on <span className="fw-bolder">innovation and user experience</span>.

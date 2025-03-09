@@ -434,6 +434,7 @@ li, a, span, div {
   }
 
   /* Contact link hover override for dark mode */
+  
   .contact .theme-aware-link:hover {
     color: #3a9fff !important;  /* Brighter blue for dark mode */
     background-color: transparent !important;
@@ -492,6 +493,7 @@ li, a, span, div {
   }
 
   /* Contact link hover override */
+  
   .contact .theme-aware-link:hover {
     color: #007bff !important;
     background-color: transparent !important;
@@ -582,4 +584,23 @@ li, a, span, div {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+}
+
+/* Project link styling */
+.project-link {
+  color: inherit !important; /* Inherit text color when not hovered */
+  text-decoration: underline !important;
+  transition: color 0.3s ease !important;
+}
+
+/* Hover states for project links */
+.project-link:hover {
+  color: #007bff !important; /* Blue in light mode */
+  text-decoration: underline !important;
+}
+
+/* Dark mode hover override */
+[data-theme="dark"] .project-link:hover {
+  color: #3a9fff !important; /* Brighter blue for dark mode */
+  text-decoration: underline !important;
 }

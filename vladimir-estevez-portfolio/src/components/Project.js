@@ -113,6 +113,21 @@ const Project = ({ title, description, technologies, githubLink, image, extended
 
   const youtubeVideoId = youtubeUrl ? getYoutubeVideoId(youtubeUrl) : null;
 
+  // Update this function in your Project.js file
+const parseUrlsInText = (text) => {
+  // First, handle actual HTML <a> tags that might be in the text
+  const htmlProcessed = text.replace(
+    /<a>\s*(https?:\/\/)?([^<\s]+)\s*<\/a>/g,
+    '<a href="https://$2" target="_blank" class="project-link " rel="noopener noreferrer">$2</a>'
+  );
+  
+  // Then handle plain domain names
+  return htmlProcessed.replace(
+    /(\s|^)([\w-]+\.(org|com|net|io|dev|co|edu|gov))([\s.,;:!?)]|$)/g,
+    '$1<a href="https://$2" target="_blank" class="project-link" rel="noopener noreferrer">$2</a>$4'
+  );
+};
+
   return (
     <>
       <Card 
@@ -206,9 +221,9 @@ const Project = ({ title, description, technologies, githubLink, image, extended
             </div>
           )}
           
-          <h5>Project Description</h5>
+          <h5 className="text-center" >Project Description</h5>
 {(extendedDescription || description).split('\n\n').map((paragraph, paraIdx) => (
-  <div key={paraIdx}>
+  <div className="text-center" key={paraIdx}>
     {paragraph.startsWith('•') ? (
       <ul className="list-unstyled mb-4">
 {paragraph.split('\r').map((line, lineIdx) => (
@@ -223,7 +238,11 @@ const Project = ({ title, description, technologies, githubLink, image, extended
 ))}
       </ul>
     ) : (
-      <p key={paraIdx} className="mb-3">{paragraph}</p>
+      <p 
+        key={paraIdx} 
+        className="mb-3" 
+        dangerouslySetInnerHTML={{ __html: parseUrlsInText(paragraph) }}
+      ></p>
     )}
   </div>
 ))}
