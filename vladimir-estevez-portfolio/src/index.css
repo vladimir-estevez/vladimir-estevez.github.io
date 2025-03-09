@@ -566,3 +566,20 @@ li, a, span, div {
 [data-theme="dark"] .btn-danger * {
   color: white !important;
 }
+
+
+.video-background {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.video-background video {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

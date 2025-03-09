@@ -250,66 +250,72 @@ const Project = ({ title, description, technologies, githubLink, image, extended
             </>
           )}
           <div className="text-center">
-          {githubLink && githubLink.startsWith('https://github') ? (
-  <Button 
-    href={githubLink} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    variant="primary"
-  >
-    <img 
-      src={theme === 'dark' ? darkModeGit : lightModeGit} 
-      alt="GitHub" 
-      style={{ 
-        height: '25px', 
-        width: 'auto', 
-        marginRight: '8px',
-        verticalAlign: 'middle'
-      }} 
-    />
-    View on GitHub
-  </Button>
-) : githubLink && githubLink.startsWith('https://gitlab') ? (
-  <Button 
-    href={githubLink} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    variant="primary"
-  >
-    <img 
-      src={gitLab} 
-      alt="GitLab" 
-      style={{ 
-        height: '25px', 
-        width: 'auto', 
-        marginRight: '8px',
-        verticalAlign: 'middle'
-      }} 
-    />
-    View in GitLab
-  </Button>
-) : (
-  <Button 
-    href={githubLink} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    variant="primary"
-  >
-    View Project Website
-  </Button>
-)}
-            {youtubeUrl && (
-              <Button 
-                href={youtubeUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                variant="danger"
-                className="ms-2"
-              >
-                <i className="bi bi-youtube me-1"></i> Watch on YouTube
-              </Button>
-            )}
-          </div>
+  <div className="d-flex flex-wrap justify-content-center">
+    <div className="me-md-2 mb-2 mb-md-0 px-1">
+      {githubLink && githubLink.startsWith('https://github') ? (
+        <Button 
+          href={githubLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          variant="primary"
+        >
+          <img 
+            src={theme === 'dark' ? darkModeGit : lightModeGit} 
+            alt="GitHub" 
+            style={{ 
+              height: '25px', 
+              width: 'auto', 
+              marginRight: '8px',
+              verticalAlign: 'middle'
+            }} 
+          />
+          View on GitHub
+        </Button>
+      ) : githubLink && githubLink.startsWith('https://gitlab') ? (
+        <Button 
+          href={githubLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          variant="primary"
+        >
+          <img 
+            src={gitLab} 
+            alt="GitLab" 
+            style={{ 
+              height: '25px', 
+              width: 'auto', 
+              marginRight: '8px',
+              verticalAlign: 'middle'
+            }} 
+          />
+          View in GitLab
+        </Button>
+      ) : (
+        <Button 
+          href={githubLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          variant="primary"
+        >
+          View Project Website
+        </Button>
+      )}
+    </div>
+    
+    {youtubeUrl && (
+      <div className='px-1'>
+        <Button 
+          href={youtubeUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          variant="danger"
+        >
+          <i className="bi bi-youtube me-1"></i> Watch on YouTube
+        </Button>
+      </div>
+    )}
+  </div>
+</div>
         </Modal.Body>
       </Modal>
     </>
