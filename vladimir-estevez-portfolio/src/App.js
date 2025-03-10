@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import NavigationBar from './components/Navbar';
@@ -25,6 +25,12 @@ function App() {
 
   const { pathname } = useLocation();
 
+   // Scroll to top when pathname changes
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+
   return (
     <ThemeProvider>
     <Container className="app">
@@ -43,7 +49,7 @@ function App() {
           </Routes>
         </Col>
       </Row>
-      <footer className="footer mt-auto py-3 text-center">
+      <footer className="footer mt-auto pb-3 text-center">
         &copy; 2025 Vladimir Estevez. All rights reserved.
       </footer>
     </Container>

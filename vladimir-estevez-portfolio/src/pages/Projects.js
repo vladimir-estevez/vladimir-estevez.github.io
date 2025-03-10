@@ -4,7 +4,7 @@ import Project from '../components/Project';
 
 function Projects({ projects }) {
   return (
-    <section id="projects" className="projects py-3">
+    <section id="projects" className="projects py-1 pb-3">
       <h1 className='p-3 text-center'>Projects</h1>
       <Row xs={1} md={2} lg={3} className="g-4">
         {projects.map((project, index) => (
