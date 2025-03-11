@@ -21,17 +21,17 @@ function About() {
       <Row className="align-items-center p-3">
         
         {/* Image Column - Displays first on mobile */}
-        <Col md={4} className="text-center order-1 order-md-2 mb-4 mb-md-0">
+        <Col lg={4} className="text-center order-1 order-lg-2 mb-4 lg-md-0">
           <img 
             src={graduationImage} 
             alt="Graduation" 
             className="img-fluid rounded-circle shadow-lg border border-5 border-white"
-            style={{ maxWidth: '100%' }} 
+            style={{ width: '400px', minWidth: '300px' }} 
           />
         </Col>
 
         {/* Content Column - Displays second on mobile */}
-        <Col md={8} className="order-2 order-md-1">
+        <Col lg={8} className="order-2 order-md-1">
           <h1 className="text-center fw-bold mb-1">About Me</h1>
           
           <div className="p-4 rounded " style={{ backgroundColor: 'var(--card-bg-secondary)', color: 'var(--text-primary)' }}>

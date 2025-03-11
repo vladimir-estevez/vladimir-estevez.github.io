@@ -527,7 +527,7 @@ li, a, span, div {
 @media (max-width: 991px) {
   .nav-link, 
   .nav-link.theme-aware-link {
-    margin: 0.5rem 0 !important;
+    margin: 0.3rem 0 !important;
     text-align: center;
     border-color: var(--text-secondary) !important;
   }
@@ -603,4 +603,79 @@ li, a, span, div {
 [data-theme="dark"] .project-link:hover {
   color: #3a9fff !important; /* Brighter blue for dark mode */
   text-decoration: underline !important;
+}
+
+[data-theme="dark"]{
+
+  #dropdown-language,
+  .dropdown-menu.show{
+    background: #212529 !important; 
+    
+    color: #fff !important;
+  }
+  #dropdown-language:hover,
+  .dropdown-item:hover{
+    background: #343a40 !important; 
+  }
+} 
+
+[data-theme="light"]{
+  #dropdown-language{
+    border: none !important;
+  }
+  #dropdown-language:hover{
+    border: 1px solid #000 !important;
+  }
+}
+
+@media (max-width: 991px) {
+  [data-theme="light"]{
+    #dropdown-language{
+      margin-top: 0.3rem !important;
+      margin-bottom: 0.3rem !important;
+      border: #fff 1px solid !important;
+      border-color: var(--text-secondary) !important;
+    }
+  }
+
+    [data-theme="dark"]{
+      #dropdown-language{
+      margin-top: 0.3rem !important;
+      margin-bottom: 0.3rem !important;
+    }}
+
+    /* Align dropdown menu with centered toggle button */
+.dropdown {
+  position: relative !important;
+}
+
+.dropdown-menu.show {
+  position: absolute !important;
+  inset: 0px auto auto 0px !important;
+  transform: translate3d(0px, 40px, 0px) !important;
+  margin-top: 0.3rem !important;
+  left: 70% !important;
+  margin-left: -4rem !important; /* Half of the menu width */
+  min-width: 4rem !important;
+  text-align: center !important;
+}
+
+
+  }
+
+/* Remove all highlighting from dropdown items */
+.no-highlight.dropdown-item,
+.no-highlight.dropdown-item:active,
+.no-highlight.dropdown-item:hover,
+.no-highlight.dropdown-item:focus,
+.no-highlight.dropdown-item.active {
+  background-color: transparent !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Just show a subtle effect on hover to indicate it's clickable */
+.no-highlight.dropdown-item:hover {
+  opacity: 0.8;
 }

@@ -5,7 +5,7 @@ function ThemeToggle() {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 
   return (
-    <div className="theme-switch-wrapper">
+    <div className="theme-switch-wrapper mx-1">
       <label className="theme-switch">
         <input
           type="checkbox"
