@@ -1,17 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 function NavigationBar({children}) {
   const [expanded, setExpanded] = useState(false);
+  const navbarRef = useRef(null);
   const navigate = useNavigate();
 
   // Function to handle navigation, close menu, and scroll to top
   const handleNavigation = (path) => {
-    setExpanded(false);         // Close the navbar
-    navigate(path);             // Navigate to the path
-    window.scrollTo(0, 0);      // Scroll to top of page
+    setExpanded(false);
+    navigate(path);
+    window.scrollTo(0, 0);
   };
+  
+  // Set up event handlers for the navbar when expanded
+  useEffect(() => {
+    if (!navbarRef.current) return;
+    
+    // Prevent scrolling only when interacting with the navbar
+    const handleTouchMove = (e) => {
+      if (expanded) {
+        // Check if the event originated from the navbar or its children
+        if (navbarRef.current.contains(e.target)) {
+          e.preventDefault();
+        }
+      }
+    };
+    
+    const navbar = navbarRef.current;
+    
+    if (expanded) {
+      // Add event listener only to the navbar element
+      navbar.addEventListener('touchmove', handleTouchMove, { passive: false });
+      navbar.addEventListener('wheel', handleTouchMove, { passive: false });
+    }
+    
+    return () => {
+      // Clean up event listeners
+      if (navbar) {
+        navbar.removeEventListener('touchmove', handleTouchMove);
+        navbar.removeEventListener('wheel', handleTouchMove);
+      }
+    };
+  }, [expanded]);
 
   return (
     <>
@@ -21,6 +53,7 @@ function NavigationBar({children}) {
         className="theme-aware-navbar" 
         expanded={expanded}
         onToggle={setExpanded}
+        ref={navbarRef}
       > 
         <Container>
           <Navbar.Brand>
