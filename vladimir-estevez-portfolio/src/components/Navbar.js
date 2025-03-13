@@ -39,8 +39,10 @@ function NavigationBar({children}) {
     
     return () => {
       // Clean up event listeners
-      navbar.removeEventListener('touchmove', handleTouchMove);
-      navbar.removeEventListener('wheel', handleTouchMove);
+      if (navbar) {
+        navbar.removeEventListener('touchmove', handleTouchMove);
+        navbar.removeEventListener('wheel', handleTouchMove);
+      }
     };
   }, [expanded]);
 

@@ -20,18 +20,21 @@ function About() {
     <section id="about" className="about py-1 pb-3">
       <Row className="align-items-center p-3">
         
-        {/* Image Column - Displays first on mobile */}
-        <Col lg={4} className="text-center order-1 order-lg-2 mb-4 lg-md-0">
+        {/* Image Column with increased sizes for medium and large screens */}
+        <Col md={8} lg={5} className="text-center order-1 order-lg-2 mb-4 mb-lg-0 mx-auto mx-lg-0">
           <img 
             src={graduationImage} 
             alt="Graduation" 
             className="img-fluid rounded-circle shadow-lg border border-5 border-white"
-            style={{ width: '400px', minWidth: '300px' }} 
+            style={{ 
+              maxWidth: '100%',
+              width: 'clamp(320px, 85%, 450px)'  // Increased min, preferred %, and max sizes
+            }}
           />
         </Col>
 
-        {/* Content Column - Displays second on mobile */}
-        <Col lg={8} className="order-2 order-md-1">
+        {/* Content Column - adjusted to complement the wider image */}
+        <Col md={12} lg={7} className="order-2 order-lg-1">
           <h1 className="text-center fw-bold mb-1">About Me</h1>
           
           <div className="p-4 rounded " style={{ backgroundColor: 'var(--card-bg-secondary)', color: 'var(--text-primary)' }}>
