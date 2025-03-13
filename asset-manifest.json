@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ddd81d47.css",
-    "main.js": "/static/js/main.c5f7ab1c.js",
+    "main.js": "/static/js/main.8a66bb94.js",
     "static/js/488.ea5e40bc.chunk.js": "/static/js/488.ea5e40bc.chunk.js",
     "static/media/Valcourt 2030 -  Presentation.pptx": "/static/media/Valcourt 2030 -  Presentation.965b3e7f45ac22b8d0af.pptx",
     "static/media/Examples of Cohort Workshops .zip": "/static/media/Examples of Cohort Workshops .41180883d788f5308eea.zip",
@@ -21,9 +21,8 @@
     "static/media/Valcourt 2030 - Comprehensive Assesment - Report.pdf": "/static/media/Valcourt 2030 - Comprehensive Assesment - Report.c9fb51e8660fb6e01de6.pdf",
     "static/media/iot environment.jpg": "/static/media/iot environment.c2970310c02b15175882.jpg",
     "static/media/Data Journalism Challenge - The Real Emitters source code.ipynb": "/static/media/Data Journalism Challenge - The Real Emitters source code.6095fc0b4773ff71c32f.ipynb",
-    "static/media/CI CD Documentation.pdf": "/static/media/CI CD Documentation.c497fdcdd78b514b445b.pdf",
-    "static/media/Final Project Instructions .zip": "/static/media/Final Project Instructions .1248ccb9d1ccefb4f4f4.zip",
     "static/media/DataChallenge.jpg": "/static/media/DataChallenge.99e713403846666b05c0.jpg",
+    "static/media/CI CD Documentation.pdf": "/static/media/CI CD Documentation.897da381f9cbc1b76984.pdf",
     "static/media/Cinema Database - System Design Submission.zip": "/static/media/Cinema Database - System Design Submission.41b2044151b37e2bc665.zip",
     "static/media/Green Lab Web Application - Data Base Proof Of Concept .pdf": "/static/media/Green Lab Web Application - Data Base Proof Of Concept .f4b0d3b76347e40a5992.pdf",
     "static/media/AI.png": "/static/media/AI.86e2bf6eb27424215d62.png",
@@ -31,14 +30,14 @@
     "static/media/The Real Emitters - Challenge Submission.pptx": "/static/media/The Real Emitters - Challenge Submission.164f6b37d0da4948056e.pptx",
     "static/media/AI Cohort - Certificate of Graduation.png": "/static/media/AI Cohort - Certificate of Graduation.7e5721b02983799ecc33.png",
     "static/media/CV and Reference Letters .zip": "/static/media/CV and Reference Letters .777d74b4bf137c066a48.zip",
-    "static/media/Quiz Project - Assingment Instructions.zip": "/static/media/Quiz Project - Assingment Instructions.6b8f9f11e309e6efd6c2.zip",
-    "static/media/Gaming programming - Final Report.pdf": "/static/media/Gaming programming - Final Report.498f568a9e07c781f141.pdf",
-    "static/media/CI CD Report Instructions.pdf": "/static/media/CI CD Report Instructions.920deb1c8a97466194af.pdf",
-    "static/media/Parkour Game - Assignment Instructions .pdf": "/static/media/Parkour Game - Assignment Instructions .0c128896481cd69a2090.pdf",
+    "static/media/Quiz Project - Assingment Instructions.zip": "/static/media/Quiz Project - Assingment Instructions.780c4100660e4c7293c9.zip",
+    "static/media/Gaming programming - Final Report.pdf": "/static/media/Gaming programming - Final Report.7b9cf0762c675df5a5a5.pdf",
+    "static/media/CI CD Report Instructions.pdf": "/static/media/CI CD Report Instructions.6ef1837643e72414da33.pdf",
     "static/media/integrative project.jpg": "/static/media/integrative project.c81e115f9486516c1b9f.jpg",
     "static/media/pdf.png": "/static/media/pdf.7dd43474072e1359d92b.png",
     "static/media/blackjack.png": "/static/media/blackjack.3a36fe7ab449f32c2575.png",
     "static/media/Quiz Project Analysis - Answers.pdf": "/static/media/Quiz Project Analysis - Answers.ce7794c4cd5e6c80947d.pdf",
+    "static/media/Final Project Instructions .zip": "/static/media/Final Project Instructions .41a12bf4c8455a712c88.zip",
     "static/media/CICD.png": "/static/media/CICD.544a4fc165c9fb69bc62.png",
     "static/media/Green Lab Web Application - Proof Of Concept Web Application.pdf": "/static/media/Green Lab Web Application - Proof Of Concept Web Application.489c9943c920e0b68620.pdf",
     "static/media/TechQuiero.png": "/static/media/TechQuiero.011888107d195634d655.png",
@@ -47,6 +46,7 @@
     "static/media/parkour.jpg": "/static/media/parkour.2ffeb3ac544c7826ba21.jpg",
     "static/media/darkModeGit.png": "/static/media/darkModeGit.e9088c95c77a28394c3b.png",
     "static/media/lightModeGit.png": "/static/media/lightModeGit.724c274d9136f3f5f484.png",
+    "static/media/Parkour Game - Assignment Instructions .pdf": "/static/media/Parkour Game - Assignment Instructions .1e0c266dc62dbed113fe.pdf",
     "static/media/enviromental data explorer.jpg": "/static/media/enviromental data explorer.12b13fe46d7939549d05.jpg",
     "static/media/ppt.png": "/static/media/ppt.9f166b82edc3f2f83720.png",
     "static/media/zip.png": "/static/media/zip.baaf74a5eab29075e596.png",
@@ -57,11 +57,11 @@
     "static/media/cinema.webp": "/static/media/cinema.3fc58efc15227f8b9a4d.webp",
     "index.html": "/index.html",
     "main.ddd81d47.css.map": "/static/css/main.ddd81d47.css.map",
-    "main.c5f7ab1c.js.map": "/static/js/main.c5f7ab1c.js.map",
+    "main.8a66bb94.js.map": "/static/js/main.8a66bb94.js.map",
     "488.ea5e40bc.chunk.js.map": "/static/js/488.ea5e40bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ddd81d47.css",
-    "static/js/main.c5f7ab1c.js"
+    "static/js/main.8a66bb94.js"
   ]
 }
