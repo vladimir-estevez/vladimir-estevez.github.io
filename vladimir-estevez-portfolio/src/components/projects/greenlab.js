@@ -33,7 +33,7 @@ export const greenlab = {
     '• The ability to build interactive, data-driven web applications.',
 
   technologies: [
-    'MERN Stack (MongoDB, Express, React, Node.js)',
+    'MERN (MongoDB, Express, React, Node.js)',
     'Python',
     'Pandas',
     'Matplotlib',
@@ -41,7 +41,6 @@ export const greenlab = {
     'ETL',
     'AWS Redshift',
     'Bootstrap',
-    'Node.js child_process'
   ],
 
   githubLink: 'https://github.com/vladimir-estevez/FinalProjectDBTWA.git',

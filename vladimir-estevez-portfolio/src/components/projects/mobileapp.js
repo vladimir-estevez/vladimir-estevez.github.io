@@ -9,13 +9,8 @@ export const mobileapp = {
   technologies: [
     'Kotlin',
     'Jetpack Compose',
-    'Material Design 3',
-    'Room Database',
-    'Retrofit',
     'Coroutines',
-    'ViewModel',
     'StateFlow',
-    'Coil Image Loading',
     'Navigation Component'
   ],
   githubLink: 'https://github.com/vladimir-estevez/MobileAppFinal.git',

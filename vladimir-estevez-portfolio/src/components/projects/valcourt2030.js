@@ -32,11 +32,10 @@ export const valcourt2030 = {
     'JWT Authentication',
     'Bcrypt',
     // DevOps
-    'Git Workflow',
+    'Git-Workflow',
     'XAMPP',
     'AWS Elastic Beanstalk',
     // Utilities
-    'node-cron'
   ],
 
   githubLink: 'https://github.com/vladimir-estevez/IntegrativeProject2024.git',

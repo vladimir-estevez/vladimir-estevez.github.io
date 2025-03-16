@@ -412,7 +412,7 @@ li, a, span, div {
     background-color: var(--bg-secondary) !important;
     color: var(--text-primary) !important;
     text-decoration: underline !important;
-    text-underline-offset: 6px !important;
+    text-underline-offset: 3px !important;
     text-decoration-thickness: 1px !important;
     transform: scale(1.05) !important; /* Add this line */
   }
@@ -621,10 +621,12 @@ li, a, span, div {
 
 [data-theme="light"]{
   #dropdown-language{
-    border: none !important;
+    border: 1px solid transparent !important;
   }
   #dropdown-language:hover{
+ 
     border: 1px solid #000 !important;
+  
   }
 }
 
@@ -678,4 +680,66 @@ li, a, span, div {
 /* Just show a subtle effect on hover to indicate it's clickable */
 .no-highlight.dropdown-item:hover {
   opacity: 0.8;
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+
+}
+#dropdown-language:hover{
+  text-decoration: underline !important;
+}
+
+/* Add to your index.css */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s;
+}
+
+.loading-content {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px 25px;  /* Slightly reduced for mobile */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 85%;  /* Prevents overflow on small screens */
+}
+
+@media (min-width: 768px) {
+  .loading-content {
+    padding: 20px 40px;  /* Original padding for larger screens */
+  }
+}
+
+.loading-content p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* For dark theme */
+[data-theme="dark"] .loading-content {
+  background-color: #333;
+  color: #fff;
+}
+
+.translating-text {
+  opacity: 0.7;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
 }

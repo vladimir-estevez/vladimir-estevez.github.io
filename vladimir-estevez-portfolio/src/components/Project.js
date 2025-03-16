@@ -9,10 +9,13 @@ import darkModeGit from '../images/darkModeGit.png';
 import lightModeGit from '../images/lightModeGit.png';
 import python from '../images/icons/Python.png';
 import gitLab from '../images/gitlab.png';
+import TranslatedText from './TranslatedText';
+import { useTranslation } from '../context/TranslationContext';
 
 const Project = ({ title, description, technologies, githubLink, image, extendedDescription, youtubeUrl, files }) => {
   const [showModal, setShowModal] = useState(false);
   const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme'));
+  const { setLoadingState } = useTranslation(); // Import the loading state setter
   
   useEffect(() => {
     const observer = new MutationObserver((mutations) => {
@@ -34,7 +37,24 @@ const Project = ({ title, description, technologies, githubLink, image, extended
 
 
   const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
+ 
+  const handleShow = () => {
+    // Show loading overlay first
+    setShowModal(true);
+    setLoadingState(true);
+    
+    // Short delay before showing modal to allow translations to process
+    setTimeout(() => {
+      
+      // Hide loading overlay after content is ready
+      setTimeout(() => {
+        setLoadingState(false);
+      }, 333);
+    }, 333);
+  };
+
+
+  
 
   const getDownloadName = (filePath) => {
     // Extract the base filename from the path
@@ -172,28 +192,25 @@ const parseUrlsInText = (text) => {
           </div>
         )}
         <Card.Body className="d-flex flex-column align-items-center">
-          <Card.Title>{title}</Card.Title>
-          <Card.Text className="flex-grow-1">{description}</Card.Text>
-          <ListGroup 
-  variant="flush" 
-  className="w-100 text-center"
->
-</ListGroup>
+          <Card.Title><TranslatedText>{title}</TranslatedText></Card.Title>
+          <Card.Text className="flex-grow-1"><TranslatedText>{description}</TranslatedText></Card.Text>
+          <ListGroup variant="flush" className="w-100 text-center">
+          </ListGroup>
           <div className="mt-auto d-flex justify-content-center">
-          <Button 
-  variant="primary"
-  onClick={handleShow}
-  className="theme-aware-link"
->
-  Details
-</Button>
+            <Button 
+              variant="primary"
+              onClick={handleShow}
+              className="theme-aware-link"
+            >
+              <TranslatedText>Details</TranslatedText>
+            </Button>
           </div>
         </Card.Body>
       </Card>
 
       <Modal show={showModal} onHide={handleClose} size="lg" className="theme-aware-modal">
-        <Modal.Header closeButton className="theme-aware-modal">
-          <Modal.Title className="theme-aware-modal" >{title}</Modal.Title>
+      <Modal.Header closeButton className="theme-aware-modal">
+          <Modal.Title className="theme-aware-modal text-center w-100"><TranslatedText>{title}</TranslatedText></Modal.Title>
         </Modal.Header>
         <Modal.Body className="theme-aware-modal">
           {/* YouTube video embed */}
@@ -221,47 +238,69 @@ const parseUrlsInText = (text) => {
             </div>
           )}
           
-          <h5 className="text-center" >Project Description</h5>
-{(extendedDescription || description).split('\n\n').map((paragraph, paraIdx) => (
-  <div className="text-center" key={paraIdx}>
-    {paragraph.startsWith('•') ? (
-      <ul className="list-unstyled mb-4">
-{paragraph.split('\r').map((line, lineIdx) => (
-  <li key={`${paraIdx}-${lineIdx}`} className="mb-2">
-  <i className="bi bi-asterisk me-2" style={{ 
-    fontSize: '0.6rem',
-    fontWeight: 'lighter',
-    opacity: '0.7'
-  }}></i>
-  {line.replace('•', '').trim()}
-</li>
-))}
-      </ul>
-    ) : (
-      <p 
-        key={paraIdx} 
-        className="mb-3" 
-        dangerouslySetInnerHTML={{ __html: parseUrlsInText(paragraph) }}
-      ></p>
-    )}
-  </div>
-))}
+          <h5 className="text-center"><TranslatedText >Project Description</TranslatedText></h5>
+          {(extendedDescription || description).split('\n\n').map((paragraph, paraIdx) => {
+  // Process the paragraph HTML first before passing to TranslatedText
+  const processedParagraph = paragraph.startsWith('•') ? 
+    paragraph : 
+    parseUrlsInText(paragraph);
+    
+    return (
+      <div className="text-center" key={paraIdx}>
+        {paragraph.startsWith('•') ? (
+          <ul className="list-unstyled mb-4">
+            {paragraph.split('\r').map((line, lineIdx) => {
+              const processedLine = parseUrlsInText(line.replace('•', '').trim());
+              return (
+                <li key={`${paraIdx}-${lineIdx}`} className="mb-2 d-flex justify-content-center align-items-start">
+                  <div className="d-flex align-items-start" style={{ maxWidth: '80%' }}>
+                    <i className="bi bi-asterisk me-2 mt-1" style={{ 
+                      fontSize: '0.6rem',
+                      fontWeight: 'lighter',
+                      opacity: '0.7',
+                      flexShrink: 0
+                    }}></i>
+                    <span>
+                      <TranslatedText html={true}>{processedLine}</TranslatedText>
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p key={paraIdx} className="mb-3">
+            <TranslatedText html={true}>{processedParagraph}</TranslatedText>
+          </p>
+        )}
+      </div>
+    );
+})}
           
-          <h5>Technologies Used</h5>
+          <h5><TranslatedText>Technologies Used</TranslatedText></h5>
+          
           <ul className="mb-4">
             {technologies.map((tech, index) => (
-              <li key={index}>{tech}</li>
+              <li key={index}>
+                
+                <TranslatedText>
+
+                {tech}
+                
+                </TranslatedText>
+                </li>
             ))}
           </ul>
-               {/* New: List downloadable files if available */}
-               {files && files.length > 0 && (
+          
+          {/* New: List downloadable files if available */}
+          {files && files.length > 0 && (
             <>
-              <h5>Downloadable Files</h5>
+              <h5><TranslatedText>Download Files</TranslatedText></h5>
               <ul className="list-unstyled mb-4">
                 {files.map((file, index) => (
                   <li key={index}>
                     <a href={file} download={getDownloadName(file)}>
-                    {getFileIcon(file)}{getDownloadName(file)}
+                      {getFileIcon(file)}{getDownloadName(file)}
                     </a>
                   </li>
                 ))}
@@ -288,7 +327,7 @@ const parseUrlsInText = (text) => {
               verticalAlign: 'middle'
             }} 
           />
-          View on GitHub
+         <TranslatedText>View on GitHub</TranslatedText>
         </Button>
       ) : githubLink && githubLink.startsWith('https://gitlab') ? (
         <Button 
@@ -307,7 +346,8 @@ const parseUrlsInText = (text) => {
               verticalAlign: 'middle'
             }} 
           />
-          View in GitLab
+<TranslatedText>View in GitLab</TranslatedText>
+
         </Button>
       ) : (
         <Button 
@@ -316,7 +356,7 @@ const parseUrlsInText = (text) => {
           rel="noopener noreferrer" 
           variant="primary"
         >
-          View Project Website
+          <TranslatedText>View Project Website</TranslatedText>
         </Button>
       )}
     </div>
@@ -329,7 +369,9 @@ const parseUrlsInText = (text) => {
           rel="noopener noreferrer" 
           variant="danger"
         >
-          <i className="bi bi-youtube me-1"></i> Watch on YouTube
+          <i className="bi bi-youtube me-1"></i> < TranslatedText> 
+          Watch on YouTube
+          </TranslatedText>
         </Button>
       </div>
     )}

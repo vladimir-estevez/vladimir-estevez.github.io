@@ -12,6 +12,10 @@ import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import BackgroundVideo from './components/BackgroundVideo';
 import CVs from './files/CV and Reference Letters .zip'
+import { TranslationProvider } from './context/TranslationContext';
+import Loading from './components/Loading';
+import TranslatedText from './components/TranslatedText';
+
 function App() {
 
 
@@ -32,7 +36,9 @@ function App() {
 
 
   return (
+    <TranslationProvider>
     <ThemeProvider>
+      <Loading />
     <Container className="app">
       <BackgroundVideo />
     <NavigationBar>
@@ -49,11 +55,15 @@ function App() {
           </Routes>
         </Col>
       </Row>
+
       <footer className="footer mt-auto pb-3 text-center">
-        &copy; 2025 Vladimir Estevez. All rights reserved.
+      <TranslatedText>
+        &copy; 2025 Vladimir Estevez - All rights reserved.
+      </TranslatedText>
       </footer>
     </Container>
     </ThemeProvider>
+    </TranslationProvider>
   );
 }
 

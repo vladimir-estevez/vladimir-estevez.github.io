@@ -32,7 +32,6 @@ export const blackjack = {
     'C#',
     'Meta Quest 2 VR Set',
     'VR Game Development',
-    'VR Android Builds',
     'GitHub'
   ],
 

@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Dropdown } from 'react-bootstrap';
+import { useTranslation } from '../context/TranslationContext.js';
 
 const LanguageSelector = () => {
-  // Initialize selected language from localStorage or default to English
-  const [selectedLanguage, setSelectedLanguage] = useState(() => {
-    return localStorage.getItem('selectedLanguage') || 'English';
-  });
+  const translation = useTranslation();
+  const currentLanguage = translation?.currentLanguage || 'English';
+  const changeLanguage = translation?.changeLanguage || (() => {});
   
   // Handler for language selection
   const handleLanguageSelect = (language) => {
-    setSelectedLanguage(language);
-    // Save selection to localStorage
-    localStorage.setItem('selectedLanguage', language);
-    // Later, this is where you'd add translation logic
+    changeLanguage(language);
   };
-
-  // Ensure localStorage is updated if selectedLanguage changes through other means
-  useEffect(() => {
-    localStorage.setItem('selectedLanguage', selectedLanguage);
-  }, [selectedLanguage]);
 
   return (
     <Dropdown className="">
@@ -27,31 +19,28 @@ const LanguageSelector = () => {
         id="dropdown-language"
         className="mx-1"
       >
-        {selectedLanguage} {/* Display the selected language */}
+        {currentLanguage}
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="">
         <Dropdown.Item 
           className="no-highlight"
           onClick={() => handleLanguageSelect('English')}
-          // active property removed
         >
           English
         </Dropdown.Item>
         <Dropdown.Item 
           className="no-highlight"
           onClick={() => handleLanguageSelect('Français')}
-          // active property removed
         >
           Français
         </Dropdown.Item>
-        <Dropdown.Item 
+        {/* <Dropdown.Item 
           className="no-highlight"
           onClick={() => handleLanguageSelect('Español')}
-          // active property removed
         >
           Español
-        </Dropdown.Item>
+        </Dropdown.Item> */}
       </Dropdown.Menu>
     </Dropdown>
   );
