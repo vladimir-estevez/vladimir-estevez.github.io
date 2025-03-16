@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ddd81d47.css",
-    "main.js": "/static/js/main.bbd711e3.js",
+    "main.css": "/static/css/main.a993a491.css",
+    "main.js": "/static/js/main.309d3c84.js",
     "static/js/488.ea5e40bc.chunk.js": "/static/js/488.ea5e40bc.chunk.js",
     "static/media/Valcourt 2030 -  Presentation.pptx": "/static/media/Valcourt 2030 -  Presentation.965b3e7f45ac22b8d0af.pptx",
     "static/media/Examples of Cohort Workshops .zip": "/static/media/Examples of Cohort Workshops .41180883d788f5308eea.zip",
@@ -56,12 +56,12 @@
     "static/media/youtube.png": "/static/media/youtube.c1f46c68075901ddf626.png",
     "static/media/cinema.webp": "/static/media/cinema.3fc58efc15227f8b9a4d.webp",
     "index.html": "/index.html",
-    "main.ddd81d47.css.map": "/static/css/main.ddd81d47.css.map",
-    "main.bbd711e3.js.map": "/static/js/main.bbd711e3.js.map",
+    "main.a993a491.css.map": "/static/css/main.a993a491.css.map",
+    "main.309d3c84.js.map": "/static/js/main.309d3c84.js.map",
     "488.ea5e40bc.chunk.js.map": "/static/js/488.ea5e40bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddd81d47.css",
-    "static/js/main.bbd711e3.js"
+    "static/css/main.a993a491.css",
+    "static/js/main.309d3c84.js"
   ]
 }
