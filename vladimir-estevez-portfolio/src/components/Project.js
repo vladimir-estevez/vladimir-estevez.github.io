@@ -327,7 +327,7 @@ const parseUrlsInText = (text) => {
               verticalAlign: 'middle'
             }} 
           />
-         <TranslatedText>View on GitHub</TranslatedText>
+         <TranslatedText>Open in GitHub</TranslatedText>
         </Button>
       ) : githubLink && githubLink.startsWith('https://gitlab') ? (
         <Button 
@@ -346,7 +346,7 @@ const parseUrlsInText = (text) => {
               verticalAlign: 'middle'
             }} 
           />
-<TranslatedText>View in GitLab</TranslatedText>
+<TranslatedText>Open in GitLab</TranslatedText>
 
         </Button>
       ) : (

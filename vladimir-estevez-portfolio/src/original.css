@@ -1,74 +1,47 @@
-/* ===============================================
-   GLOBAL BASE STYLES
-   These styles apply to the entire document
-   =============================================== */
+/* Base styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased; /* Better font rendering in WebKit */
-  -moz-osx-font-smoothing: grayscale; /* Better font rendering in Firefox */
-  background-color: var(--bg-primary); /* Uses CSS variables for theming */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: all 0.3s ease; /* Smooth transition for theme changes */
+  transition: all 0.3s ease;
 }
 
-/* Code blocks styling */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-/* Global text colors */
-p, h1, h2, h3, h4, h5, h6, li, a, span, div {
-  color: var(--text-primary) !important;
-}
-
-/* ===============================================
-   THEME VARIABLE DEFINITIONS
-   CSS variables for light and dark themes
-   =============================================== */
-/* Light theme color palette */
+/* Theme variables */
 :root[data-theme="light"] {
-  --bg-primary: #f7f7f7;     /* Main background */
-  --bg-secondary: #f0f0f0;   /* Secondary background */
-  --text-primary: #212529;   /* Main text color */
-  --text-secondary: #6c757d; /* Secondary text color */
-  --card-bg: #ffffff;        /* Card background */
-  --card-border: rgba(0, 0, 0, 0.125); /* Card borders */
+  --bg-primary: #f7f7f7;
+  --bg-secondary: #f0f0f0;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.125);
 }
 
-/* Dark theme color palette */
 :root[data-theme="dark"] {
-  --bg-primary: #212529;     /* Main background */
-  --bg-secondary: #343a40;   /* Secondary background */
-  --text-primary: #f8f9fa;   /* Main text color */
-  --text-secondary: #ced4da; /* Secondary text color */
-  --card-bg: #343a40;        /* Card background */
-  --card-border: rgba(255,255,255,0.125); /* Card borders */
+  --bg-primary: #212529;
+  --bg-secondary: #343a40;
+  --text-primary: #f8f9fa;
+  --text-secondary: #ced4da;
+  --card-bg: #343a40;
+  --card-border: rgba(255,255,255,0.125);
 }
 
-/* ===============================================
-   COMPONENT STYLING: CARDS
-   Styles for card elements
-   =============================================== */
-/* Common card styles across themes */
+/* Common card styles */
 .card {
   background-color: var(--card-bg);
   border-color: var(--card-border);
 }
 
-/* Project cards specific styling */
-.project.card {
-  min-height: 400px;
-}
-
-/* ===============================================
-   COMPONENT STYLING: NAVIGATION
-   Styles for navbar and navigation elements
-   =============================================== */
-/* Navbar base styles - shared between themes */
+/* Navbar styles - shared */
 .theme-aware-navbar {
   background-color: var(--bg-primary) !important;
 }
@@ -76,7 +49,7 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
 .navbar-brand {
   display: flex !important;
   align-items: center !important;
-  height: 38px !important; /* Fixed height for consistent layout */
+  height: 38px !important;
 }
 
 .navbar-toggler {
@@ -84,7 +57,6 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   padding: 0.5rem;
 }
 
-/* Navbar alignment */
 .navbar-collapse {
   align-items: center !important;
 }
@@ -93,7 +65,7 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   align-items: center !important;
 }
 
-/* Navigation links styling - standardized dimensions and appearance */
+/* Nav links - shared styles */
 .nav-link, 
 .nav-link.theme-aware-link {
   height: 38px !important;
@@ -109,21 +81,7 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   box-sizing: border-box !important;
 }
 
-/* Translation item in navbar */
-.nav-link.translate-nav-item {
-  min-width: 140px;
-  display: flex !important;
-  padding: 6px 10px !important;
-  margin: 0 5px !important;
-  overflow: visible;
-  z-index: 999;
-}
-
-/* ===============================================
-   COMPONENT STYLING: BUTTONS
-   Standardized button styling across the site
-   =============================================== */
-/* Primary buttons - consistent styling for all primary buttons */
+/* Button styles - shared */
 .btn-primary {
   height: 38px !important;
   min-width: 80px !important;
@@ -141,7 +99,6 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   color: var(--text-primary) !important;
 }
 
-/* Larger buttons with theme awareness */
 .btn-primary.theme-aware-link {
   height: 44px !important;
   min-width: 120px !important;
@@ -150,27 +107,12 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   line-height: 1 !important;
 }
 
-/* Button hover effect - slight scale increase for feedback */
 .btn:hover {
   transform: scale(1.05) !important;
+  
 }
 
-/* Force white text on danger buttons */
-.btn-danger, 
-.btn-danger * {
-  color: white !important;
-}
-
-/* Theme toggle button */
-.btn.theme-toggle {
-  border-width: 1px !important;
-}
-
-/* ===============================================
-   COMPONENT STYLING: CONTACTS
-   Contact information display styles
-   =============================================== */
-/* Contact list container */
+/* Contact list styles */
 .contact-list {
   max-width: 600px !important;
   margin: 0 auto !important;
@@ -185,11 +127,7 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   margin-left: 0.5rem !important;
 }
 
-/* ===============================================
-   COMPONENT STYLING: THEME TOGGLE
-   Styles for the theme toggling switch
-   =============================================== */
-/* Theme toggle button */
+/* Theme toggle styles */
 .btn.theme-toggle {
   border-width: 1px !important;
 }
@@ -201,7 +139,6 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   margin: 0.5rem auto;
 }
 
-/* Toggle switch container */
 .theme-switch {
   display: inline-block;
   position: relative;
@@ -209,14 +146,12 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   height: 34px;
 }
 
-/* Hide default checkbox */
 .theme-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider background */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -231,7 +166,6 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   box-sizing: border-box;
 }
 
-/* The slider button/knob */
 .slider:before {
   position: absolute;
   content: "";
@@ -244,7 +178,6 @@ p, h1, h2, h3, h4, h5, h6, li, a, span, div {
   border-radius: 50%;
 }
 
-/* Checked state of the toggle */
 input:checked + .slider {
   background-color: #212529;
   border: 1px solid #fff;
@@ -255,12 +188,10 @@ input:checked + .slider:hover {
   border: 1px solid #fff; 
 }
 
-/* Move slider button when checked */
 input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Icons within the slider */
 .slider .icon {
   position: absolute;
   top: 50%;
@@ -277,10 +208,7 @@ input:checked + .slider:before {
   right: 8px;
 }
 
-/* ===============================================
-   COMPONENT STYLING: VIDEO BACKGROUND
-   Full-screen background video effects
-   =============================================== */
+/* Video background */
 .video-background {
   position: fixed;
   top: 0;
@@ -289,25 +217,14 @@ input:checked + .slider:before {
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
 }
 
 .video-background video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover entire area without stretching */
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  object-fit: cover;
 }
 
-/* Overlay to darken the video for better text contrast */
 .video-background::after {
   content: '';
   position: absolute;
@@ -318,28 +235,21 @@ input:checked + .slider:before {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* ===============================================
-   UTILITY STYLES
-   Misc utility classes used throughout the site
-   =============================================== */
-/* Dot separator styling */
+/* Misc utility styles */
 .bi-dot {
   font-size: 1.5rem;
   line-height: 0;
   vertical-align: middle;
 }
 
-/* ===============================================
-   COMPONENT STYLING: GOOGLE TRANSLATE WIDGET
-   Custom styling for Google Translate integration
-   =============================================== */
+/* Google Translate Widget Styles */
 .translate-widget-wrapper {
   display: flex;
   align-items: center;
   cursor: pointer;
   padding: 5px;
   position: relative;
-  z-index: 1000; /* Ensure dropdown appears above other content */
+  z-index: 1000;
 }
 
 #google_translate_element {
@@ -347,7 +257,6 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
-/* Google translate gadget customization */
 .goog-te-gadget {
   font-family: inherit !important;
   font-size: 14px !important;
@@ -366,26 +275,22 @@ input:checked + .slider:before {
   align-items: center !important;
 }
 
-/* Add label to the translate widget */
 .goog-te-gadget-simple::before {
   content: "Language";
   margin-right: 8px;
   display: inline-block;
 }
 
-/* Hide original Google elements */
 .goog-te-gadget-simple img,
 .goog-te-gadget > span {
   display: none !important;
 }
 
-/* Google translate popup styling */
 .goog-te-menu-frame {
   z-index: 9999 !important;
   box-shadow: 0 3px 8px rgba(0,0,0,0.3) !important;
 }
 
-/* Translation item in navbar */
 .nav-link.translate-nav-item {
   min-width: 140px;
   display: flex !important;
@@ -395,21 +300,14 @@ input:checked + .slider:before {
   z-index: 999;
 }
 
-/* ===============================================
-   GLOBAL TEXT COLORS
-   Ensures text colors match the current theme
-   =============================================== */
 p, h1, h2, h3, h4, h5, h6,
 li, a, span, div {
   color: var(--text-primary) !important;
 }
 
-/* ===============================================
-   DARK MODE SPECIFIC STYLES
-   Styles that only apply when dark theme is active
-   =============================================== */
+/* Dark Mode Styles */
 [data-theme="dark"] {
-  /* Navbar styling for dark mode */
+  /* Navbar styling */
   .navbar {
     background-color: var(--bg-primary) !important;
     border-bottom: 1px solid var(--card-border) !important;
@@ -425,12 +323,11 @@ li, a, span, div {
     border-color: var(--text-secondary) !important;
   }
 
-  /* Custom hamburger icon for dark mode */
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
   }
 
-  /* Container background for dark mode */
+  /* Content and container styles */
   .container {
     background-color: var(--bg-primary);
   }
@@ -439,7 +336,7 @@ li, a, span, div {
     background-color: var(--bg-primary) !important;
   }
 
-  /* Card styling for dark mode */
+  /* Card styles */
   .card, 
   .card-body {
     background-color: var(--bg-secondary) !important;
@@ -447,7 +344,7 @@ li, a, span, div {
     border-color: var(--card-border) !important;
   }
 
-  /* Text element colors for dark mode */
+  /* Text elements */
   .navbar-brand,
   .nav-link,
   .navbar-nav .nav-link,
@@ -456,7 +353,7 @@ li, a, span, div {
     color: var(--text-primary) !important;
   }
 
-  /* Button styles for dark mode */
+  /* Button styles */
   .btn-dark {
     color: var(--text-primary);
     background-color: var(--bg-secondary);
@@ -465,9 +362,10 @@ li, a, span, div {
 
   .btn-primary:hover {
     background-color: var(--bg-secondary) !important;
+    
   }
 
-  /* List group styling for dark mode */
+  /* List group styling */
   .list-group-flush .list-group-item,
   .theme-aware-item {
     background-color: var(--bg-secondary) !important;
@@ -480,7 +378,7 @@ li, a, span, div {
     border-color: var(--card-border) !important;
   }
 
-  /* Modal styling for dark mode */
+  /* Modal styling */
   .modal-content,
   .modal-header,
   .modal-body {
@@ -499,18 +397,16 @@ li, a, span, div {
     color: var(--text-primary) !important;
   }
 
-  /* Invert close button for visibility in dark mode */
   .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
   }
 
-  /* Link styling for dark mode */
+  /* Link styling */
   .theme-aware-link {
     color: var(--text-secondary) !important;
     text-decoration: none;
   }
 
-  /* Hover effects for dark mode */
   .theme-aware-link:hover,
   .nav-link:hover {
     background-color: var(--bg-secondary) !important;
@@ -518,10 +414,10 @@ li, a, span, div {
     text-decoration: underline !important;
     text-underline-offset: 3px !important;
     text-decoration-thickness: 1px !important;
-    transform: scale(1.05) !important;
+    transform: scale(1.05) !important; /* Add this line */
   }
 
-  /* Google Translate styles for dark mode */
+  /* Google Translate styles */
   .goog-te-gadget-simple {
     color: var(--text-primary) !important;
     background-color: var(--bg-secondary) !important;
@@ -532,12 +428,13 @@ li, a, span, div {
     color: var(--text-primary) !important;
   }
 
-  /* Footer text color fix for dark mode */
+  /* Fix for footer text */
   .footer {
     color: var(--text-primary) !important;
   }
 
-  /* Special contact link hover for dark mode - uses brighter blue */
+  /* Contact link hover override for dark mode */
+  
   .contact .theme-aware-link:hover {
     color: #3a9fff !important;  /* Brighter blue for dark mode */
     background-color: transparent !important;
@@ -546,12 +443,9 @@ li, a, span, div {
   }
 }
 
-/* ===============================================
-   LIGHT MODE SPECIFIC STYLES
-   Styles that only apply when light theme is active
-   =============================================== */
+/* Light Mode Styles */
 [data-theme="light"] {
-  /* Navbar styling for light mode */
+  /* Navbar styling */
   .navbar {
     background-color: var(--bg-secondary) !important;
     border: none !important;
@@ -562,7 +456,7 @@ li, a, span, div {
     color: #000 !important;
   }
 
-  /* Container styles for light mode */
+  /* Container styles */
   .container,
   .App,
   .about {
@@ -573,20 +467,20 @@ li, a, span, div {
     border-bottom: 1px solid #333 !important;
   }
 
-  /* Button hover styles for light mode */
+  /* Button styles */
   .btn-primary:hover {
     background-color: #c0c0c0 !important;
     color: #ffffff !important;
     border: 1px solid #2b2b2b !important;
+    /* Remove text-decoration to prevent flickering */
   }
 
-  /* Link styling for light mode */
+  /* Link styling */
   .theme-aware-link {
     transition: background-color 0.6s ease, color 0.6s ease, text-shadow 0.6s ease;
     text-decoration: none !important;
   }
 
-  /* Hover effects for light mode */
   .theme-aware-link:hover,
   .nav-link:hover {
     background-color: #c0c0c0 !important;
@@ -595,17 +489,18 @@ li, a, span, div {
     text-decoration: underline !important;
     text-underline-offset: 6px !important;
     text-decoration-thickness: 1px !important;
-    transform: scale(1.05) !important;
+    transform: scale(1.05) !important; /* Add this line */
   }
 
-  /* Contact link hover special styling for light mode */
+  /* Contact link hover override */
+  
   .contact .theme-aware-link:hover {
     color: #007bff !important;
     background-color: transparent !important;
     border: none !important;
   }
 
-  /* Google Translate styles for light mode */
+  /* Google Translate styles */
   .goog-te-gadget-simple {
     background-color: var(--bg-secondary) !important;
     border-color: var(--text-secondary) !important;
@@ -615,28 +510,21 @@ li, a, span, div {
     color: var(--text-primary) !important;
   }
 
-  /* Footer text color fix for light mode */
+  /* Fix for footer text */
   .footer {
     color: var(--text-primary) !important;
   }
 }
 
-/* ===============================================
-   COMPONENT STYLING: FOOTER
-   Common footer styling across themes
-   =============================================== */
+/* Common footer styling */
 .footer {
   border-top: 1px solid var(--card-border);
   padding-top: 20px;
   margin-top: 30px;
 }
 
-/* ===============================================
-   RESPONSIVE STYLES: MOBILE
-   Adjustments for smaller screens
-   =============================================== */
+/* Mobile styles */
 @media (max-width: 991px) {
-  /* Navbar adjustments for mobile */
   .nav-link, 
   .nav-link.theme-aware-link {
     margin: 0.3rem 0 !important;
@@ -644,48 +532,36 @@ li, a, span, div {
     border-color: var(--text-secondary) !important;
   }
 
-  /* Light mode hover color for mobile */
+
   [data-theme="light"] .nav-link:hover {
-    background-color: 6c757d !important; /* Note: missing # for hex color */
+    background-color: 6c757d !important;
   }
 }
 
-/* ===============================================
-   COMPONENT STYLING: BADGES
-   Badge styling overrides
-   =============================================== */
-/* Force white text on badges for better contrast */
+/* Fix for Badge text color */
 .badge {
-  color: white !important;
+  color: white !important; /* This ensures white text on dark badges */
 }
 
-/* ===============================================
-   COMPONENT STYLING: PROJECT CARDS
-   Project card specific styling
-   =============================================== */
-/* Set consistent height for project cards */
+/* Add this to your CSS file */
 .project.card {
-  min-height: 400px;  /* Standard height for desktop */
+  min-height: 400px;  /* Adjust this value as needed */
 }
 
-/* Smaller height for mobile screens */
+/* For smaller screens, you might want to reduce the height */
 @media (max-width: 768px) {
   .project.card {
-    min-height: 350px;  /* Reduced height for mobile */
+    min-height: 350px;  /* Smaller height for mobile */
   }
 }
 
-/* ===============================================
-   COMPONENT STYLING: DANGER BUTTONS
-   Ensures danger buttons maintain consistent styling
-   =============================================== */
-/* Force white text on danger buttons (like YouTube) */
+/* Add this to your CSS file */
 .btn-danger, 
 .btn-danger * {
   color: white !important;
 }
 
-/* Maintain white text in both themes */
+/* This ensures the YouTube button text and icon stay white in both themes */
 [data-theme="light"] .btn-danger, 
 [data-theme="light"] .btn-danger *,
 [data-theme="dark"] .btn-danger, 
@@ -693,13 +569,10 @@ li, a, span, div {
   color: white !important;
 }
 
-/* ===============================================
-   VIDEO BACKGROUND INTERACTION PREVENTION
-   Prevents clicking through the background video
-   =============================================== */
+
 .video-background {
-  pointer-events: none; /* Prevents interaction with video */
-  user-select: none; /* Prevents selection */
+  pointer-events: none;
+  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -713,38 +586,31 @@ li, a, span, div {
   -ms-user-select: none;
 }
 
-/* ===============================================
-   COMPONENT STYLING: PROJECT LINKS
-   Styling for links within project descriptions
-   =============================================== */
-/* Base style for project links */
+/* Project link styling */
 .project-link {
-  color: inherit !important; /* Use parent text color */
+  color: inherit !important; /* Inherit text color when not hovered */
   text-decoration: underline !important;
   transition: color 0.3s ease !important;
 }
 
-/* Hover style for light mode */
+/* Hover states for project links */
 .project-link:hover {
   color: #007bff !important; /* Blue in light mode */
   text-decoration: underline !important;
 }
 
-/* Hover style for dark mode */
+/* Dark mode hover override */
 [data-theme="dark"] .project-link:hover {
   color: #3a9fff !important; /* Brighter blue for dark mode */
   text-decoration: underline !important;
 }
 
-/* ===============================================
-   COMPONENT STYLING: LANGUAGE DROPDOWN
-   Custom styling for language selection dropdown
-   =============================================== */
-/* Dark mode dropdown styles */
 [data-theme="dark"]{
+
   #dropdown-language,
   .dropdown-menu.show{
     background: #212529 !important; 
+    
     color: #fff !important;
   }
   #dropdown-language:hover,
@@ -753,19 +619,18 @@ li, a, span, div {
   }
 } 
 
-/* Light mode dropdown styles */
 [data-theme="light"]{
   #dropdown-language{
     border: 1px solid transparent !important;
   }
   #dropdown-language:hover{
+ 
     border: 1px solid #000 !important;
+  
   }
 }
 
-/* Mobile-specific dropdown styling */
 @media (max-width: 991px) {
-  /* Light mode mobile dropdown */
   [data-theme="light"]{
     #dropdown-language{
       margin-top: 0.3rem !important;
@@ -775,34 +640,32 @@ li, a, span, div {
     }
   }
 
-  /* Dark mode mobile dropdown */
-  [data-theme="dark"]{
-    #dropdown-language{
-    margin-top: 0.3rem !important;
-    margin-bottom: 0.3rem !important;
-  }}
+    [data-theme="dark"]{
+      #dropdown-language{
+      margin-top: 0.3rem !important;
+      margin-bottom: 0.3rem !important;
+    }}
 
-  /* Centering dropdown menu under button */
-  .dropdown {
-    position: relative !important;
-  }
-
-  .dropdown-menu.show {
-    position: absolute !important;
-    inset: 0px auto auto 0px !important;
-    transform: translate3d(0px, 40px, 0px) !important;
-    margin-top: 0.3rem !important;
-    left: 70% !important;
-    margin-left: -4rem !important; /* Half of the menu width */
-    min-width: 4rem !important;
-    text-align: center !important;
-  }
+    /* Align dropdown menu with centered toggle button */
+.dropdown {
+  position: relative !important;
 }
 
-/* ===============================================
-   COMPONENT STYLING: DROPDOWN ITEMS
-   Removes default highlighting from dropdown items
-   =============================================== */
+.dropdown-menu.show {
+  position: absolute !important;
+  inset: 0px auto auto 0px !important;
+  transform: translate3d(0px, 40px, 0px) !important;
+  margin-top: 0.3rem !important;
+  left: 70% !important;
+  margin-left: -4rem !important; /* Half of the menu width */
+  min-width: 4rem !important;
+  text-align: center !important;
+}
+
+
+  }
+
+/* Remove all highlighting from dropdown items */
 .no-highlight.dropdown-item,
 .no-highlight.dropdown-item:active,
 .no-highlight.dropdown-item:hover,
@@ -814,34 +677,30 @@ li, a, span, div {
   outline: none !important;
 }
 
-/* Subtle hover effect for dropdown items */
+/* Just show a subtle effect on hover to indicate it's clickable */
 .no-highlight.dropdown-item:hover {
   opacity: 0.8;
   text-decoration: underline !important;
   text-underline-offset: 3px !important;
-}
 
-/* Dropdown language button hover effect */
+}
 #dropdown-language:hover{
   text-decoration: underline !important;
 }
 
-/* ===============================================
-   COMPONENT STYLING: LOADING OVERLAY
-   Full-screen loading overlay with animation
-   =============================================== */
+/* Add to your index.css */
 .loading-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Highest z-index to appear above everything */
-  animation: fadeIn 0.3s; /* Fade in animation */
+  z-index: 9999;
+  animation: fadeIn 0.3s;
 }
 
 .loading-content {
@@ -853,41 +712,34 @@ li, a, span, div {
   max-width: 85%;  /* Prevents overflow on small screens */
 }
 
-/* Responsive padding for larger screens */
 @media (min-width: 768px) {
   .loading-content {
     padding: 20px 40px;  /* Original padding for larger screens */
   }
 }
 
-/* Loading text style */
 .loading-content p {
   margin-top: 10px;
   font-weight: 500;
 }
 
-/* Define the fadeIn animation for the loading overlay */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* Dark theme variant of loading content */
+/* For dark theme */
 [data-theme="dark"] .loading-content {
   background-color: #333;
   color: #fff;
 }
 
-/* ===============================================
-   COMPONENT STYLING: TRANSLATING TEXT
-   Styling for text that's being actively translated
-   =============================================== */
 .translating-text {
-  opacity: 0.7; /* Slightly faded to indicate processing */
+  opacity: 0.7;
   display: inline-flex;
   align-items: center;
   font-size: 0.9em;
-  background-color: rgba(0, 0, 0, 0.05); /* Subtle background */
+  background-color: rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   padding: 0.1rem 0.3rem;
 }
