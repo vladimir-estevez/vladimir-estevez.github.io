@@ -2,6 +2,12 @@ export const customTranslations = {
     // Existing translations...
     
     'Français': {
+      'MERN stack (MongoDB, Express, React, Node.js)': 'Stack MERN (MongoDB, Express, React, Node.js)',
+      'A web-based application that enables dynamic data visualization by integrating the MERN stack with Python-powered ETL processes and AWS Redshift for scalable storage.':'Une application Web qui permet la visualisation dynamique des données en intégrant le stack MERN avec des processus ETL basés sur Python et AWS Redshift pour un stockage évolutif.',
+      
+      'Built using the MERN stack': 'Développée à partir du stack MERN',
+      'Built using the MERN stack ': 'Développée à partir du stack MERN ', // Note the space at the end
+      'Built using the MERN stack': ' Développée à partir du stack MERN',
       // Navigation
       'Home': 'Accueil',
       

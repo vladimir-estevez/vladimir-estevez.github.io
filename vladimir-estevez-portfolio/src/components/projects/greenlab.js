@@ -11,9 +11,9 @@ export const greenlab = {
     'A web-based application that enables dynamic data visualization by integrating the MERN stack ' +
     'with Python-powered ETL processes and AWS Redshift for scalable storage.',
 
-  extendedDescription: 
+    extendedDescription: 
     'This project involved developing a responsive web application that allows users to interact with and visualize data in real time. ' +
-    'Built using the MERN stack (MongoDB, Express, React, and Node.js), the platform supports user registration, secure login, ' +
+    'Built using MERN technology (MongoDB, Express, React, and Node.js), the platform supports user registration, secure login, ' +
     'and offers a dedicated graph page for visual insights.\n\n' +
     'Python was employed for ETL tasks:\n\n' +
     '• Extracting data from CSV files using Pandas.\n\n' +
@@ -33,7 +33,7 @@ export const greenlab = {
     '• The ability to build interactive, data-driven web applications.',
 
   technologies: [
-    'MERN (MongoDB, Express, React, Node.js)',
+    'MERN stack (MongoDB, Express, React, Node.js)',
     'Python',
     'Pandas',
     'Matplotlib',
