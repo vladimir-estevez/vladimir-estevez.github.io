@@ -15,7 +15,7 @@ export const quiz = {
 '• Implemented synchronized game state across multiple clients using Socket.io\r' +
 '• Designed a responsive UI that adapts to both teacher and student needs\r' +
 '• Created robust error handling for room management and user connections\r' +
-'• Developed efficient state management for real-time score updates\n\n' +
+'• We developed an efficient state management for real-time score updates\n\n' +
 'This project highlights my ability to build complex real-time web applications, manage concurrent user connections effectively, implement secure room-based multiplayer systems, and create intuitive interfaces for different user roles.',
   technologies: [
     'React.js',

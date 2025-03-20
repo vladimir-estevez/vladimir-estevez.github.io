@@ -20,7 +20,6 @@ export const blackjack = {
     'in a realistic 3D environment.\n\nCore features include:\n\n' +
     '• Intuitive VR controls for smooth gameplay.\n\n' +
     '• A robust betting system for realistic wagering.\n\n' +
-    '• Animated card dealing to enhance immersion.\n\n' +
     'A major challenge was working with 3D visual assets, as we had no prior experience in this area. ' +
     'We learned to integrate and optimize 3D models, textures, and animations within Unity to create a polished and immersive experience.\n\n' +
     'Additionally, we focused on user experience design, game mechanics, and performance optimization for VR hardware.\n\n' +
