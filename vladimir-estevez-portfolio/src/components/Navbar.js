@@ -138,7 +138,7 @@ function NavigationBar({children}) {
                 Contact
                 </TranslatedText>
               </Nav.Link>
-              <LanguageSelector />
+           {/* <LanguageSelector /> */}
               {children}
             </Nav>
           </Navbar.Collapse>
