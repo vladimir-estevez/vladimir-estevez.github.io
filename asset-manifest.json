@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a993a491.css",
-    "main.js": "/static/js/main.8c052ee9.js",
+    "main.js": "/static/js/main.c6b1727a.js",
     "static/js/488.ea5e40bc.chunk.js": "/static/js/488.ea5e40bc.chunk.js",
     "static/media/Valcourt 2030 -  Presentation.pptx": "/static/media/Valcourt 2030 -  Presentation.965b3e7f45ac22b8d0af.pptx",
     "static/media/Examples of Cohort Workshops .zip": "/static/media/Examples of Cohort Workshops .41180883d788f5308eea.zip",
@@ -57,11 +57,11 @@
     "static/media/cinema.webp": "/static/media/cinema.3fc58efc15227f8b9a4d.webp",
     "index.html": "/index.html",
     "main.a993a491.css.map": "/static/css/main.a993a491.css.map",
-    "main.8c052ee9.js.map": "/static/js/main.8c052ee9.js.map",
+    "main.c6b1727a.js.map": "/static/js/main.c6b1727a.js.map",
     "488.ea5e40bc.chunk.js.map": "/static/js/488.ea5e40bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a993a491.css",
-    "static/js/main.8c052ee9.js"
+    "static/js/main.c6b1727a.js"
   ]
 }
